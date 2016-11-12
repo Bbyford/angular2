@@ -62,7 +62,7 @@
         },
         {
             "controlType": "checkbox",
-            "name": "YXBJ",
+            "controlName": "YXBJ",
             "controlTitle": "*有效标记",
             "required": true,
             "ElemClass": "ui-g-3"

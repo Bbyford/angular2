@@ -1,29 +1,30 @@
-<div [ngClass]="field.ElemClass" class="mb8">
+
+<div [formGroup]="form" [ngClass]="field.ElemClass" class="mb8">
     <div *ngIf="field.controlType == 'text'">
         <label class="flex-box">
             <span class="text-exp" >{{field.controlTitle}}</span>
-            <input [type]="field.controlType" [required]="field.required" />
+            <input [type]="field.controlType" [required]="field.required" [formControlName]="field.controlName" />
         </label>
     </div>
-    <div *ngIf="field.controlType == 'select'">
+    <!--<div *ngIf="field.controlType == 'select'">
         <div class="flex-box">
             <span class="text-exp">{{field.controlTitle}}</span>
             <div class="out-com">
-                <p-dropdown [options]="field.Selectoptions" [(ngModel)]="model" [attr.name]="field.controlName" ngModel></p-dropdown>
+                <p-dropdown [options]="field.Selectoptions" [formControlName]="field.controlName"></p-dropdown>
             </div>
         </div>
     </div>
     <div *ngIf="field.controlType == 'checkbox'">
         <div class="flex-box">
             <span class="text-exp">{{field.controlTitle}}</span>
-            <p-checkbox binary="false" [attr.name]="field.controlName" [(ngModel)]="model" ngModel style="margin-top:2px"></p-checkbox>
+            <p-checkbox binary="false" style="margin-top:2px" [formControlName]="field.controlName"></p-checkbox>
         </div>
     </div>
     <div *ngIf="field.controlType == 'date'">
         <div class="flex-box">
             <span class="text-exp">{{field.controlTitle}}</span>
-            <p-calendar [(ngModel)]="model" [showIcon]="true"></p-calendar>
+            <p-calendar [showIcon]="true" [formControlName]="field.controlName"></p-calendar>
         </div>
 
-    </div>
+    </div>-->
 </div>
