@@ -29,7 +29,7 @@ html {
 }
 
 body {
-    font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Roboto", "Trebuchet MS", Arial, Helvetica, sans-serif;
     font-size: 12px;
     -webkit-font-smoothing: antialiased;
     line-height: 1.5;
@@ -128,7 +128,9 @@ a {
 .ui-datatable-odd {
     background-color: #eee!important;
 }
-
+.ui-datepicker{
+    width: auto!important;
+}
 
 /*-------content------- */
 
@@ -152,7 +154,7 @@ button {
 input[type="text"],
 input[type="password"] {
     box-sizing: border-box;
-    height: 23px;
+    height: 24px;
     padding: 2px 0;
     border: 1px solid #ccc;
     border-radius: 3px;

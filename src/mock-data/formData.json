@@ -72,7 +72,7 @@
             "name": "YXBJ",
             "title": "*日期",
             "required": true,
-            "class": "ui-g-4"
+            "class": "ui-g-6"
         }
     ]
 }

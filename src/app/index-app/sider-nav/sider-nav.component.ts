@@ -44,18 +44,15 @@ export class SiderNavComponent implements OnInit {
       this.active = url.slice(pos+1);
   }
   onSelect(datas: Data): void {
+    debugger;
       if(this.selectData===datas){
-        this.selectData = {
-          label: '',
-          icon: '',
-          show: false,
-          items: false
-        }
+        this.selectData = null;
       }else{
         this.selectData = datas;
       }   
   }
   addTab(one:string,two:string,$event:any){
+    debugger;
      let tabs = new Tabs();
      tabs.one = one;
      tabs.two = two;
@@ -82,6 +79,7 @@ export class SiderNavComponent implements OnInit {
      this.active = two;
   }
   tabTo(one:string,two:string){
+    debugger;
       this.active = two;
       if(two === "home"){
         this.router.navigate([one+'/'+two]);
@@ -93,6 +91,7 @@ export class SiderNavComponent implements OnInit {
     this.active = "home";
   }
   closeTab(two:string){
+    debugger;
       event.stopPropagation();
       let len = this.tabs.length;
       for(let i = 0; i < len; i++){
