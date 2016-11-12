@@ -23,9 +23,9 @@ export class IndexAppComponent implements OnInit {
         value: false
       });
       document.title = "首页";
-      if(!sessionStorage.getItem('user')){
-          this.router.navigate(["login"]);
-      }
+      // if(!sessionStorage.getItem('user')){
+      //     this.router.navigate(["login"]);
+      // }
   }
   private blockUnBlockUI(event) {
       this.blockUI = event.value;

@@ -9,17 +9,18 @@
                             <div class="ui-g-3">
                                 <label class="flex-box">
                             <span class="text-exp">地点编码</span>
-                            <input type="text">
+                            <input type="text" name="name" ngModel>
                         </label>
                             </div>
                             <div class="ui-g-3">
                                 <label class="flex-box">
                             <span class="text-exp">地点名称</span>
-                            <input type="text">
+                            <input type="text" name="address" ngModel>
                         </label>
                             </div>
                         </div>
                     </form>
+                    {{myform1.value | json}}
                 </div>
                 <div class="row">
                     <form #myform2="ngForm">

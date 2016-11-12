@@ -1,0 +1,66 @@
+{
+    "data": [
+        {
+            "type": "text",
+            "name": "GSID",
+            "title": "*公司编码",
+            "required": true,
+            "class": "ui-g-3"
+        },
+        {
+            "type": "text",
+            "name": "GSMC",
+            "title": "*公司名称",
+            "required": true,
+            "class": "ui-g-3"
+        },
+        {
+            "type": "text",
+            "name": "GSJC",
+            "title": "*公司简称",
+            "required": true,
+            "class": "ui-g-3"
+        },
+        {
+            "type": "text",
+            "name": "GSYWMC",
+            "title": "公司英文名称",
+            "required": false,
+            "class": "ui-g-3"
+        },
+        {
+            "type": "text",
+            "name": "GJID",
+            "title": "*国家名称",
+            "required": true,
+            "class": "ui-g-2"
+        },
+        {
+            "type": "text",
+            "name": "SFID",
+            "title": "*省份名称",
+            "required": true,
+            "class": "ui-g-4"
+        },
+        {
+            "type": "text",
+            "name": "CSID",
+            "title": "*城市名称",
+            "required": true,
+            "class": "ui-g-6"
+        },
+        {
+            "type": "select",
+            "name": "CKJB",
+            "title": "*仓库级别",
+            "class": "ui-g-3",
+            "options": [
+                {"label":"请选择仓库级别","value":null},
+                {"label":"中心仓","value":"中心仓"},
+                {"label":"区域中心仓","value":"区域中心仓"},
+                {"label":"门店仓库","value":"门店仓库"}
+            ]
+        }
+
+    ]
+}

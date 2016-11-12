@@ -2,24 +2,26 @@ import { NgModule } from '@angular/core';
 import { CommonModule }  from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import {ButtonModule} from 'primeng/primeng';
+import {ButtonModule, DropdownModule} from 'primeng/primeng';
 
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+import { FormBaseComponent } from './dymaic-form/base.component';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     FooterComponent,
     ToolbarComponent,
-    
+    FormBaseComponent    
   ],
   imports: [
     CommonModule,
     FormsModule,
     HttpModule,
-    ButtonModule
+    ButtonModule,
+    DropdownModule
   ],
   providers: [],
   exports: [
@@ -27,7 +29,8 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
     FormsModule,
     HeaderComponent,
     FooterComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    FormBaseComponent
   ]
 })
 export class ShareModule { }

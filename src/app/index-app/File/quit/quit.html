@@ -1,1 +1,32 @@
-<h1>quit</h1>
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+      <input name="first" ngModel required #first="ngModel">
+      <input name="last" ngModel>
+      <button>Submit</button>
+    </form>
+    <form #f2="ngForm" (ngSubmit)="onSubmit(f2)" novalidate>
+      <input name="first" ngModel required #first="ngModel">
+      <input name="last" ngModel>
+      <button>Submit</button>
+    </form>
+    <p>First name value: {{ first.value }}</p>
+    <p>First name valid: {{ first.valid }}</p>
+    <p>Form value: {{ f2.value | json }}</p>
+    <p>Form valid: {{ f2.valid }}</p>
+    <form #myform1="ngForm">
+                        <div class="ui-g">
+                            <div class="ui-g-3">
+                                <label class="flex-box">
+                            <span class="text-exp">地点编码</span>
+                            <input type="text" name="name" ngModel>
+                        </label>
+                            </div>
+                            <div class="ui-g-3">
+                                <label class="flex-box">
+                            <span class="text-exp">地点名称</span>
+                            <input type="text" name="address" ngModel>
+                        </label>
+                            </div>
+                        </div>
+                        <p>{{myform1.value | json}}</p>
+                    </form>
+    

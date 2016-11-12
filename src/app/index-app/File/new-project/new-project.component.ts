@@ -12,6 +12,7 @@ export class NewProjectComponent implements OnInit {
     ckbj : SelectItem[];
     selected: string;
     blockUI: Boolean;
+    value: any;
     model = {
         name : null
     }
@@ -32,6 +33,5 @@ export class NewProjectComponent implements OnInit {
     }
     private blockUnBlockUI(event) {
       this.blockUI = event.value;
-  }
-    
+    }   
 }
