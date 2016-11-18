@@ -1,0 +1,40 @@
+/*
+* @Author: anchen
+* @Date:   2016-11-14 15:08:47
+* @Last Modified by:   anchen
+* @Last Modified time: 2016-11-18 01:49:09
+*/
+
+div.auto{
+    padding: 10px 20px;
+}
+div.auto:hover,div.font-bold:hover{
+     background: #0c2b36;
+     cursor: pointer;
+}
+div.sec > div.font-bold{
+    height: 40px;
+    line-height: 40px;
+    padding-left: 50px;
+    position: relative;
+}
+div.sec > div.font-bold > span{
+    position: absolute;
+    top: 13px;
+    left: 30px;
+}
+i.fa{
+    padding: 0 10px;
+}
+.navi ul.nav li a{
+    height: 2000px;
+}
+#abc{
+    text-align: center;
+    position: relative;
+}
+#abc span.fa{
+    position: absolute;
+    left: 70px;
+    top: 13px;
+}

@@ -1,0 +1,30 @@
+<!-- list -->
+<ul class="nav" >
+  <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+    <span translate="aside.nav.HEADER">Home</span>
+  </li>
+  <li *ngFor="let datas of data">
+    <div class="auto" (click)="datas.show = !datas.show">
+      <span class="pull-right text-muted">
+        <i [ngClass]="{'fa':true, 'fa-fw':true, 'fa-chevron-down':true, 'fa-chevron-up':true}"></i>
+      </span>
+      <i class="fa {{datas.icon}}"></i>
+      <span class="font-bold" translate="aside.nav.DASHBOARD">{{datas.label}}</span>
+    </div>
+    <div class="sec" *ngFor="let items of datas.items" [hidden]="datas.show">
+      <div class="font-bold" (click)="items.show = !items.show"><span class="fa fa-plus" *ngIf="items.items"></span> {{items.label}}</div>
+      <ul class="nav" *ngIf="items.items" [hidden]="items.show">
+        <li *ngFor="let menu of items.items" id="abc">
+            <a>
+              <span class="fa fa-file"></span>
+              <span>{{menu.label}}</span>
+            </a>
+        </li>
+      </ul>
+    </div>
+
+  </li>
+
+</ul>
+
+<!-- / list -->
