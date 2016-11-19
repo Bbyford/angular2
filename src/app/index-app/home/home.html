@@ -1,1 +1,28 @@
+<div class="container">
+    <div [hidden]="submitted">   
+      <h1>Home Form</h1>
+      <form *ngIf="active" (ngSubmit)="onSubmit()" #myform="ngForm">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" [(ngModel)]="model.name" required name="name" #name="ngModel" #box />todo: remove this: {{box.className}}
+          <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+            name is required
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="alterEgo">Alter Ego</label>
+          <input type="text" class="form-control" id="alterEgo" [(ngModel)]="model.alterEgo" name="alterEgo" />
+        </div>
+        <div class="form-group">
+          <label for="power">Hero Power</label>
+          <select class="form-control" id="power" required [(ngModel)]="model.power" name="power">
+            <option *ngFor="let data of powers" [value]="data">{{data}}</option>
+          </select>
+        </div>
+        <div [ngClass]="setclass" #box data-name="xiaoming">test  {{box.getAttribute ( 'data-name' ) }}</div>
+        <button type="submit" class="btn btn-default" [disabled]="!myform.form.valid">Submit</button>
+        <button type="button" class="btn btn-default" (click)="newHero()">add</button>
+      </form>
+    </div>
+</div>
 <h1>Home</h1>

@@ -4,6 +4,7 @@ import { Data }    from '../../mock-data/data.module';
 import { GetDataService  }  from '../../core/getData-service/get-data.service';
 
 @Component({
+  moduleId: "module.id",
   selector: 'app-sider-nav',
   templateUrl: './sider-nav.component.html',
   styleUrls: ['./sider-nav.component.css']
@@ -25,10 +26,8 @@ export class SiderNavComponent implements OnInit {
       this.getData();
       console.log(this);
   }
-  onSelect(show: boolean): void {
-      console.log(show);
-      show = !show;
-      console.log(show)
+  onSelect(datas: Data): void {
+      this.selectData = datas;
   }
 
 }
