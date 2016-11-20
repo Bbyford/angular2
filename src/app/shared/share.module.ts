@@ -4,12 +4,10 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { HeaderComponent } from './header/header.component';
-import { SiderNavComponent }  from "./sider-nav/sider-nav.component";
 
 @NgModule({
   declarations: [
-    HeaderComponent,
-    SiderNavComponent
+    HeaderComponent
   ],
   imports: [
     CommonModule,
@@ -20,8 +18,7 @@ import { SiderNavComponent }  from "./sider-nav/sider-nav.component";
   exports: [
     CommonModule,
     FormsModule,
-    HeaderComponent,
-    SiderNavComponent
+    HeaderComponent
   ]
 })
 export class ShareModule { }

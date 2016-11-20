@@ -1,0 +1,35 @@
+<!-- list -->
+<ul class="nav">
+  <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+    <a translate="aside.nav.HEADER" routerLink="./home" routerLinkActive="active">Home</a>
+  </li>
+  <li *ngFor="let datas of data">
+    <div class="auto" (click)="onSelect(datas)">
+
+      <span class="pull-right text-muted">
+        <i [ngClass]="{'fa':true, 'fa-fw':true, 'fa-chevron-down':selectData != datas, 'fa-chevron-up':selectData === datas}"></i>
+      </span>
+      <i class="fa {{datas.icon}}"></i>
+      <span class="font-bold" translate="aside.nav.DASHBOARD">{{datas.label}}</span>
+    </div>
+    <div [hidden]="selectData != datas">
+        <div class="sec" *ngFor="let items of datas.items">
+        <div class="font-bold" (click)="items.show = !items.show" *ngIf="items.items"><span [ngClass]="{'fa':true, 'fa-plus':items.show,'fa-minus':!items.show }" *ngIf="items.items"></span> {{items.label}}</div>
+        <a id="sec" (click)="items.show = !items.show" *ngIf="!items.items" routerLink="./{{datas.label}}/{{items.label}}" routerLinkActive="active"><span [ngClass]="{'fa':true, 'fa-plus':items.show,'fa-minus':!items.show }" *ngIf="items.items"></span> {{items.label}}</a>
+        <ul class="nav" *ngIf="items.items" [hidden]="items.show">
+          <li *ngFor="let menu of items.items" class="abc">
+              <a [routerLink]="['./',items.label,menu.label]" routerLinkActive="active">
+                <span class="fa fa-file"></span>
+                <span>{{menu.label}}</span>
+              </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+  </li>
+
+</ul>
+
+<!-- / list -->
