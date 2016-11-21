@@ -1076,12 +1076,12 @@ body {
     margin-bottom: 0;
   }
 }
-
+/*
 html {
   background: url('../img/bg.jpg');
   background-attachment: fixed;
   background-size: cover;
-}
+}*/
 
 .app.container {
   padding-right: 0;

@@ -15,6 +15,7 @@ import { UndoComponent }    from './Edit/undo/undo.component';
 import { ContentsComponent }    from './Help/contents/contents.component';
 import { SearchFileComponent }    from './Help/search-file/search-file.component';
 import { SearchTextComponent }    from './Help/search-text/search-text.component';
+import { SidebarComponent}  from './aside/sidebar';
 import { IndexAppComponent } from './index-app.component';
 
 @NgModule({
@@ -33,7 +34,8 @@ import { IndexAppComponent } from './index-app.component';
     UndoComponent,
     ContentsComponent,
     SearchFileComponent,
-    SearchTextComponent
+    SearchTextComponent,
+    SidebarComponent
   ],
   imports: [
     ShareModule,

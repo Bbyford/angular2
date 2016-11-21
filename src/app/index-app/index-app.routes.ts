@@ -12,6 +12,7 @@ import { UndoComponent }    from './Edit/undo/undo.component';
 import { ContentsComponent }    from './Help/contents/contents.component';
 import { SearchFileComponent }    from './Help/search-file/search-file.component';
 import { SearchTextComponent }    from './Help/search-text/search-text.component';
+import {SidebarComponent}    from './aside/sidebar';
 import { IndexAppComponent }    from './index-app.component';
 
 export const ROUTER_CONFIG: Routes = [
@@ -32,6 +33,7 @@ export const ROUTER_CONFIG: Routes = [
             {path:'Help/Contents',component:ContentsComponent},
             {path:'Search/File',component:SearchFileComponent},
             {path:'Search/Text',component:SearchTextComponent},
+            {path:'side',component:SidebarComponent},
         ]
     },
 ]

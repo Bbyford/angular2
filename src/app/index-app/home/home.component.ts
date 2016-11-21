@@ -2,9 +2,10 @@ import  { Component,OnInit} from '@angular/core';
 import { Form }    from './form';
 @Component({
     selector: 'home',
-    templateUrl: './home.html'
+    templateUrl: './home.html',
+    styleUrls: ['./home.css']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
     powers = ['Really Smart', 'Super Flexible',
             'Super Hot', 'Weather Changer'];
     model = new Form(11,'nike',this.powers[2],'Chunk overstreet');
@@ -12,6 +13,7 @@ export class HomeComponent {
     setclass = 'active';
     onSubmit(){
         this.submitted = true;
+        console.log(this.active);
     }
     get diagnostic(){
         return JSON.stringify(this.model);

@@ -1,0 +1,45 @@
+<button class="btn btn-default" id="toggle-sidebar" type="button" (click)="eventCalled()">
+    &#9776;
+</button>
+<nav class="sidebar" [ngClass]="{sidebarPushRight: isActive}">
+    <ul class="list-group">
+
+        <div class="nested-menu" *ngFor="let menu of userMsg.menus">
+            <a class="list-group-item" (click)="addExpandClass(menu.rowKey)">
+                <span> {{menu.menuName}} <i class="fa fa-fw fa-caret-down"></i></span>
+            </a>
+            <li class="nested" [ngClass]="{'expand' : showMenu === menu.rowKey}">
+                <ul class="submenu">
+                    <li *ngFor="let item of menu.menuList">
+                        <a [ngClass]="{'checked' : showItem === item.rowKey}" (click)="routerTo(item.rowKey,item.menuName,item.url)" [routerLinkActive]="['router-link-active']"><span>{{item.menuName}}</span></a>
+                    </li>
+
+                </ul>
+            </li>
+        </div>
+
+
+    </ul>
+</nav>
+
+<section class="main-container main-page" [ngClass]="{sidebarPushRight: isActive}">
+  <div class="container-fluid">
+    <!-- Page Heading -->
+    <div class="row">
+      <ul class="tabsMenu">
+        <li *ngFor="let item of menus">
+          <a (click)="tabTo(item.id,item.name,item.url)" [ngClass]="{'checked' : showItem === item.id}" type="button" class="btn btn-sm btn-secondary">
+            {{item.name}}
+            <i class="fa fa-close fa-fw" (click)="closeTab(item.id)"></i>
+          </a>
+        </li>
+
+      </ul>
+    </div>
+
+    <router-outlet></router-outlet>
+
+  </div>
+
+
+</section>
