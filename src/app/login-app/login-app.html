@@ -1,1 +1,62 @@
-<h1>登录界面</h1>
+<div class="header">
+    <i class="ace-icon fa fa-leaf green"></i>
+    <span class="">猿猿科技</span>
+    <span class="" id="id-text2">ERP</span>
+</div>
+<div class="contain clearfix">
+    <div class="logo-box">
+        <a></a>
+    </div>
+    <div class="login-form">
+        <div id="" class="login-box widget-box">
+            <div class="widget-main">
+                <h4 class="blue lighter bigger">
+                    <i class="ace-icon fa fa-coffee green"></i>请输入您的信息
+                </h4>
+                <div class="space-6"></div>
+                <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm.value)">
+                    <label class="block clearfix">
+                        <span class="block input-icon input-icon-right">
+                            <input type="text" class="form-control" name="CZYID" autofocus="autofocus" placeholder="用户名" required [(ngModel)]="user.CZYID">
+                            <i class="ace-icon fa fa-user"></i>
+                        </span>
+                    </label>
+    
+                    <label class="block clearfix">
+                        <span class="block input-icon input-icon-right">
+                            <input type="password" class="form-control" name="CZYMM" placeholder="密码" required [(ngModel)]="user.CZYMM">
+                            <i class="ace-icon fa fa-lock"></i>
+                        </span>
+                    </label>
+    
+                    <div class="space"></div>
+    
+                    <div class="clearfix">
+                        <button type="submit" class="width-35 pull-right btn btn-sm btn-primary" [disabled]="!loginForm.form.valid">
+                            <i class="ace-icon fa fa-key"></i>
+                            <span class="bigger-110">登录</span>
+                        </button>
+                    </div>  
+                    <div class="validateMsg"></div>
+                    <div class="space-4"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class='footer' id="id-company-text">©&nbsp;集群车宝</div>
+<div class="privilege-mask">
+    <div class="privilege">
+        <div class="privilege-title clearfix">
+            <span>选择权限</span>
+            <span class=''></span>
+        </div>
+        <div class="user-privilege clearfix">
+            <div class="data-header">
+                <span>本地角色编码</span>
+                <span>本地角色名称</span> 
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { ROUTING }  from './login-app.routes';
+import { FormsModule }  from '@angular/forms';
 import { LoginAppComponent }  from './login-app.component';
 
 @NgModule({
@@ -7,7 +8,8 @@ import { LoginAppComponent }  from './login-app.component';
     LoginAppComponent,
   ],
   imports: [
-    ROUTING
+    ROUTING,
+    FormsModule
   ],
   providers: []
 })

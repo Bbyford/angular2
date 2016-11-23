@@ -2,6 +2,7 @@ import './rxjs-extensions';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
+
 import { ROUTING }  from './app.router';
 import { RouterModule }   from '@angular/router';
 
@@ -22,7 +23,7 @@ import { GetDataService }  from './core/getData-service/get-data.service'
     ShareModule,
     HttpModule,
     RouterModule,
-    InMemoryWebApiModule.forRoot(InMemoryDataService),
+    InMemoryWebApiModule.forRoot(InMemoryDataService,{passThruUnknownUrl: true}),
     IndexAppModule,
     LoginAppModule,
     ROUTING

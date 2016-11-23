@@ -16,9 +16,9 @@ export class GetDataService {
                     .toPromise()
                     .then(response => response.json().data as Data[])
     }
-    getDateYYERP(): Observable<any[]>{
-        let body = JSON.stringify({page:1,limit:10,mdrender:false});
-        return this.http.get("https://cnodejs.org/api/v1/topics")
+    getDateYYERP(): Observable<any>{
+        let body = JSON.stringify({});
+        return this.http.get('http://localhost:8080/YYERP/base/funcAction/query.action?pdata:{"GSID":"1001","F_CZQX":"CGZZID","DJLXID":"CD0","page":1,"totle":0,"qrylx":"PUR_CGDD","F_BDJS":"000101","F_BDQXID":"000101"}')
                     .map(res => res.json())
                     .catch(this.handleError);
     }

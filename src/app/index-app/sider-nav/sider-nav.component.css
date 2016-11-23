@@ -2,7 +2,7 @@
 * @Author: anchen
 * @Date:   2016-11-14 15:08:47
 * @Last Modified by:   anchen
-* @Last Modified time: 2016-11-21 11:14:52
+* @Last Modified time: 2016-11-22 10:42:00
 */
 ul,li{
     padding: 0;
@@ -70,11 +70,38 @@ i.fa{
     top: 50px;
     min-height: 40px;
 }
-/*.navbar > .navbar-list{
-    height: 100%;
-    line-height: 20px;
+.navbar .navbar-list li{
+    width: 100px;
 }
-.navbar > .navbar-list > li{
-    width: 80px;
-    text-align: center;
-}*/
+.navbar .navbar-list li a:hover{
+    background-color: #eee!important;
+}
+.navbar .navbar-list li a:focus{
+    background-color: #eee!important;
+}
+.navbar .navbar-list li a.active{
+    background-color: #eee!important;
+}
+.navbar .navbar-list li a i{
+    position: absolute;
+    right: -5px;
+    top: 0;
+    padding: 0;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    margin: 0;
+}
+.navbar .navbar-list li a i:hover{
+    color: #f00;
+}
+.chrome-tabs-shell{
+    position: fixed;
+    left: 200px;
+    right:0;
+    top: 50px;
+    height: 40px;
+}
+.chrome-tabs-shell .chrome-tabs li.chrome-tab-current{
+    z-index: 99!important;
+}
