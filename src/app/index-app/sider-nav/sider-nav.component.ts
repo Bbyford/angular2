@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router }  from '@angular/router';
 import { Data }    from '../../mock-data/data.module';
 import { Tabs }  from './tabs';
-import { GetDataService  }  from '../../core/getData-service/get-data.service';
+import { DataService  }  from '../../core';
 
 @Component({
   moduleId: "module.id",
@@ -14,10 +14,10 @@ export class SiderNavComponent implements OnInit {
   data: Data[];
   selectData: Data;
   tabs: any[] = [];
-  dataYY: any;
+  menuData: any;
   active: string;
   constructor(
-      private getDataService : GetDataService,
+      private getDataService : DataService,
       private router : Router
     ) { }
   getData(): void {
@@ -25,11 +25,11 @@ export class SiderNavComponent implements OnInit {
           .getDate()
           .then(data => this.data = data);
   }
-  getDataYY():void{
+  getMenuData():void{
     //console.log(this.dataYY)
     this.getDataService
-          .getDateYYERP()
-          .subscribe(res => {this.dataYY = res;console.log(this.dataYY)});
+          .getDateYYERP('aut/czyAction/getmenu.action',{F_CZYID:'A0001',pdata:{CZYID:"A0001",BDJSID:"000101",TYJSID:"0001",BDQXID:"000101",F_BDQXID:"000101"}})
+          .subscribe(res => {this.menuData = res;console.log(this.menuData)});
          // console.log(this.dataYY);
   }
   ngOnInit(): void{

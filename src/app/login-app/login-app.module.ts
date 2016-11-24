@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { ROUTING }  from './login-app.routes';
 import { FormsModule }  from '@angular/forms';
 import { LoginAppComponent }  from './login-app.component';
-import {GetDataService} from '../core/getData-service/get-data.service';
+import { DataService} from '../core';
 
 @NgModule({
   declarations: [
@@ -12,6 +12,6 @@ import {GetDataService} from '../core/getData-service/get-data.service';
     ROUTING,
     FormsModule
   ],
-  providers: [GetDataService]
+  providers: [DataService]
 })
 export class LoginAppModule { }
