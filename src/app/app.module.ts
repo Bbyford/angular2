@@ -14,7 +14,6 @@ import { IndexAppModule }  from './index-app/index-app.module';
 import { LoginAppModule }  from './login-app/login-app.module';
 import { ShareModule }  from './shared';
 import { GetDataService }  from './core/getData-service/get-data.service';
-import { HttpAPI} from './core/http.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +28,7 @@ import { HttpAPI} from './core/http.service';
     LoginAppModule,
     ROUTING
   ],
-  providers: [GetDataService,HttpAPI],
+  providers: [GetDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

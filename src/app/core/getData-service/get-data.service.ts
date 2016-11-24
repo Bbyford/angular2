@@ -26,5 +26,13 @@ export class GetDataService {
         console.log('An error occurred',error);
         return Promise.reject(error.message || error);
     }
+    PostData(data:any): Observable<any> {
+    console.info("ABCD");
+    let headers: Headers = new Headers({ 'Content-Type': 'application/json' });
+    return this.http.post("http://localhost:8080/YYERP/aut/czyAction/mylogin.action", data, { headers: headers })
+      .map(res => res.json())
+      .catch(this.handleError);
+      }
+
     
 }

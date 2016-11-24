@@ -14,7 +14,7 @@
                     <i class="ace-icon fa fa-coffee green"></i>请输入您的信息
                 </h4>
                 <div class="space-6"></div>
-                <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm.value)">
+                <form #loginForm="ngForm">
                     <label class="block clearfix">
                         <span class="block input-icon input-icon-right">
                             <input type="text" class="form-control" name="CZYID" autofocus="autofocus" placeholder="用户名" required [(ngModel)]="user.CZYID">
@@ -32,7 +32,7 @@
                     <div class="space"></div>
     
                     <div class="clearfix">
-                        <button type="submit" class="width-35 pull-right btn btn-sm btn-primary" [disabled]="!loginForm.form.valid">
+                        <button type="button" class="width-35 pull-right btn btn-sm btn-primary" [disabled]="!loginForm.form.valid" (click)="onSubmit()">
                             <i class="ace-icon fa fa-key"></i>
                             <span class="bigger-110">登录</span>
                         </button>

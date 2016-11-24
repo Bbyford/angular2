@@ -13,7 +13,6 @@ export class FooterComponent implements OnInit {
       let user = sessionStorage.getItem('user');
       user = JSON.parse(user);
       this.user = user;
-      this.user.CZYMC = "廖江";
   }
 
 }
