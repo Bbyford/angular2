@@ -4,10 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
@@ -18,7 +20,8 @@ import { HeaderComponent } from './header/header.component';
   exports: [
     CommonModule,
     FormsModule,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ]
 })
 export class ShareModule { }

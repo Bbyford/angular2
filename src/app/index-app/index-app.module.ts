@@ -1,6 +1,12 @@
+// modules
 import { NgModule } from '@angular/core';
 import { ShareModule }  from '../shared';
+import { AutoCompleteModule } from 'primeng/primeng';
+
+// routes
 import { ROUTING }  from './index-app.routes';
+
+// components
 import { HomeComponent }  from './home/home.component';
 import { SiderNavComponent  }   from './sider-nav/sider-nav.component';
 import { NewProjectComponent }    from './File/new-project/new-project.component';
@@ -39,6 +45,7 @@ import { IndexAppComponent } from './index-app.component';
   ],
   imports: [
     ShareModule,
+    AutoCompleteModule,
     ROUTING
   ],
   providers: []

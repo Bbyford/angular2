@@ -95,6 +95,9 @@ export class SiderNavComponent implements OnInit {
       event.stopPropagation();
       let len = this.tabs.length;
       for(let i = 0; i < len; i++){
+        if(this.tabs.length < len){
+            return false;
+        }
         if(this.tabs[i].two === two&&this.tabs.length>1){
           if(two === this.active){
             if(this.tabs.length ===2){
@@ -118,7 +121,6 @@ export class SiderNavComponent implements OnInit {
             
           }
           this.tabs.splice(i,1);
-
           sessionStorage.setItem('tabs',JSON.stringify(this.tabs));
         }
       }

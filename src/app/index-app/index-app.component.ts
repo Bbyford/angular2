@@ -11,7 +11,8 @@ export class IndexAppComponent implements OnInit {
    ngOnInit(): void{
       document.title = "首页";
       if(!sessionStorage.getItem('user')){
-          this.router.navigate(["index/home"]);
+          console.log(1);
+          this.router.navigate(["login"]);
       }
   }
 }
