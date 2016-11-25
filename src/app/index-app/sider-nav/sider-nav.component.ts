@@ -29,8 +29,8 @@ export class SiderNavComponent implements OnInit {
   getMenuData():void{
     //console.log(this.dataYY)
     this.getDataService
-          .getDateYYERP('aut/czyAction/getmenu.action',{F_CZYID:'A0001',pdata:{CZYID:"A0001",BDJSID:"000101",TYJSID:"0001",BDQXID:"000101",F_BDQXID:"000101"}})
-          .subscribe(res => {this.menuData = res;console.log(this.menuData)});
+          .GetData('aut/czyAction/getmenu.action',{CZYID:"A0001",BDJSID:"000101",TYJSID:"0001",BDQXID:"000101",F_BDQXID:"000101"})
+          .subscribe(res => {this.menuData = res;console.log(res)});
          // console.log(this.dataYY);
   }
   ngOnInit(): void{

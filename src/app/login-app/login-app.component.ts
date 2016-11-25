@@ -30,18 +30,28 @@ export class LoginAppComponent implements OnInit{
   onSubmit(){
       this.value = {};
       this.value['pdata'] = JSON.stringify(this.user);
-     //   let path = JSON.stringify(user);
+        let path = JSON.stringify(this.user);
      //  this.path['pdata'] = path;
      // // this.path = JSON.stringify(this.path);
      // var headers = new Headers();
      //     headers.append('Content-Type', 'application/json;charset=UTF-8');
       // console.log(path);
       //console.log(this.path);{'pdata':'{"CZYID":"A0001","CZYMM":"123456"}'}
-
-      this.myhttp.PostData(this.value).subscribe(res => {this.data = res;if(this.data.success===true){
+    // 得在服务端改动 post请求
+    /*   this.myhttp.PostData(this.value).subscribe(res => {this.data = res;if(this.data.success===true){
+                   sessionStorage.setItem('user',JSON.stringify(this.data));
+                  this.router.navigate(["index/home"]);
+              }else{alert("用户名或密码错误")}});  */
+    // 不用改动服务端 post方式
+    this.myhttp.RequestPost(path).subscribe(res => {this.data = res;if(this.data.success===true){
                   sessionStorage.setItem('user',JSON.stringify(this.data));
                   this.router.navigate(["index/home"]);
-              }else{alert("用户名或密码错误")}});
+              }else{alert("用户名或密码错误")}}); 
+    // 得在服务端改动  post请求
+    // this.myhttp.ExecutePost(this.value).subscribe(res => {this.data = res;if(this.data.success===true){
+    //               sessionStorage.setItem('user',JSON.stringify(this.data));
+    //               this.router.navigate(["index/home"]);
+    //           }else{alert("用户名或密码错误")}}); 
       
   }
 }
