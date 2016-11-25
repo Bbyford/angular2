@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router }  from '@angular/router';
-import { Data }    from '../../mock-data/data.module';
+import { Data }    from '../../core';
 import { Tabs }  from './tabs';
 import { DataService  }  from '../../core';
 
@@ -16,14 +16,15 @@ export class SiderNavComponent implements OnInit {
   tabs: any[] = [];
   menuData: any;
   active: string;
+  url = "../../mock-data/data.json";
   constructor(
       private getDataService : DataService,
       private router : Router
     ) { }
   getData(): void {
       this.getDataService
-          .getDate()
-          .then(data => this.data = data);
+          .getDate(this.url)
+          .subscribe(res => this.data = res);
   }
   getMenuData():void{
     //console.log(this.dataYY)

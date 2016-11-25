@@ -1,8 +1,7 @@
 import { Injectable }    from '@angular/core';
-import { Headers, Http, Response, RequestOptions}    from '@angular/http';
+import { Headers, Http, Response}    from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/toPromise';
-import { Data }  from '../mock-data/data.module';
+import { Data }  from './data.module';
 
 @Injectable() 
 
@@ -11,10 +10,10 @@ export class DataService {
     private dataUrl = 'app/data';
     private dataUrlYYERP='http://localhost:8080/YYERP/';
     constructor(private http:Http){ }
-    getDate(): Promise<Data[]>{
-        return this.http.get(this.dataUrl)
-                    .toPromise()
-                    .then(response => response.json().data as Data[])
+    getDate(url:string):Observable<Data[]>{
+        return this.http.get(url)
+                    .map(res => res.json().data)
+                    .catch(this.handleError);
     }
     getDateYYERP(path:string,params:any): Observable<any>{
         let url = this.dataUrlYYERP + path + '?' + JSON.stringify(params);
@@ -29,9 +28,10 @@ export class DataService {
       .map(res => res.json())
       .catch(this.handleError);
     }
-    private handleError(error: any): Promise<any>{
-        console.log('An error occurred',error);
-        return Promise.reject(error.message || error);
+    private handleError(error: any): Observable<any>{
+        let errorMessage = (error.message) ? (error.message) : (error.statusText ? error.statusText : 'Server error');
+        console.error(errorMessage);
+        return Observable.throw(errorMessage);
     }
     
 }

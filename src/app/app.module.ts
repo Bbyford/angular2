@@ -6,9 +6,6 @@ import { HttpModule } from '@angular/http';
 import { ROUTING }  from './app.router';
 import { RouterModule }   from '@angular/router';
 
-import { InMemoryWebApiModule }  from 'angular-in-memory-web-api';
-import { InMemoryDataService }  from './mock-data/in-memory-data.service';
-
 import { AppComponent } from './app.component';
 import { IndexAppModule }  from './index-app/index-app.module';
 import { LoginAppModule }  from './login-app/login-app.module';
@@ -23,7 +20,6 @@ import { CoreModule } from './core';
     ShareModule,
     HttpModule,
     RouterModule,
-    InMemoryWebApiModule.forRoot(InMemoryDataService,{passThruUnknownUrl: true}),
     IndexAppModule,
     LoginAppModule,
     ROUTING

@@ -9,7 +9,7 @@
         <!-- brand -->
         <a href="javascript:void(0)" class="navbar-brand text-lt">
           <i class="fa fa-btc"></i>
-          <img src="img/logo.png" alt="." class="hide">
+          <img src="./assets/img/logo.png" alt="." class="hide">
           <span class="hidden-folded m-l-xs">angular</span>
         </a>
         <!-- / brand -->
@@ -32,11 +32,11 @@
         <!-- link and dropdown -->
         <ul class="nav navbar-nav hidden-sm">
           <li class="dropdown pos-stc" dropdown>
-            <a href="javascript:void(0)" class="dropdown-toggle" dropdown-toggle>
+            <a href="javascript:void(0)" class="dropdown-toggle" (click)="toshow()">
               <span>Mega</span> 
               <span class="caret"></span>
             </a>
-            <div class="dropdown-menu wrapper w-full bg-white">
+            <div class="dropdown-menu wrapper w-full bg-white" [class.active]="show">
               <div class="row">
                 <div class="col-sm-4">
                   <div class="m-l-xs m-t-xs m-b-xs font-bold">Pages <span class="badge badge-sm bg-success">10</span></div>
@@ -187,7 +187,7 @@
                 <div class="list-group">
                   <a href="javascript:void(0)" class="media list-group-item">
                     <span class="pull-left thumb-sm">
-                      <img src="img/a0.jpg" alt="..." class="img-circle">
+                      <img src="./assets/img/a0.jpg" alt="..." class="img-circle">
                     </span>
                     <span class="media-body block m-b-none">
                       Use awesome animate.css<br>
@@ -212,7 +212,7 @@
           <li class="dropdown" dropdown>
             <a href="javascript:void(0)" class="dropdown-toggle clear" dropdown-toggle>
               <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
-                <img src="img/a0.jpg" alt="...">
+                <img src="./assets/img/a0.jpg" alt="...">
                 <i class="on md b-white bottom"></i>
               </span>
               <span class="hidden-sm hidden-md">John.Smith</span> <b class="caret"></b>

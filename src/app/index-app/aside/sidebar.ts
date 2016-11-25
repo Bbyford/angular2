@@ -90,7 +90,7 @@ export class SidebarComponent implements OnInit {
 
   //添加tab
   addTab(menuId: string, element: string, url: string) {
-    let menu = new Menu();
+    let menu :any;
     menu.id = menuId;
     menu.name = element;
     menu.url = url;
