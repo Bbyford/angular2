@@ -1,0 +1,23 @@
+<div class="ui-g">
+    <div class="ui-g-1">
+        <button pButton type="text" (click)="add()" icon="fa-plus-square" [disabled]="!toggle" label="新增"></button>
+    </div>
+    <div class="ui-g-1">
+        <button pButton type="text" (click)="edit()" icon="fa-pencil" [disabled]="true" label="修改"></button>
+    </div>
+    <div class="ui-g-1">
+        <button pButton type="text" (click)="del()" icon="fa-minus" [disabled]="true" label="删除"></button>
+    </div>
+    <div class="ui-g-1">
+        <button pButton type="text" (click)="save()" icon="fa-save (alias)" [disabled]="toggle" label="保存"></button>
+    </div>
+    <div class="ui-g-1">
+       <button pButton type="text" (click)="cancel()" icon="fa-close (alias)" [disabled]="toggle" label="取消"></button>
+    </div>
+    <div class="ui-g-1">
+       <button pButton type="text" (click)="search()" icon="fa-search" [disabled]="!toggle" label="查询"></button>
+    </div>
+    <div class="ui-g-1" *ngIf="!show">
+       <button pButton type="text" (click)="export()" icon="fa-copy (alias)" [disabled]="!toggle" label="导出"></button>
+    </div>
+</div>

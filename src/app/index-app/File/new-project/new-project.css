@@ -4,6 +4,77 @@
 * @Last Modified by:   anchen
 * @Last Modified time: 2016-11-23 15:07:10
 */
+form{
+    display: block;
+    width: 100%;
+}
 .content{
-    height: 200px;
+    width: 100%;
+}
+.text-exp {
+    display: block;
+    float: left;
+    text-align: right;
+    width: 80px;
+    padding: 5px;
+}
+.tabs-wrap > .tabs > .tabs-selected > a:hover{
+    cursor: default;
+}
+.tabs-wrap {
+    position: relative;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.tabs{
+    list-style-type: none;
+    height: 26px;
+    margin: 0px;
+    padding: 0px;
+    padding-left: 4px;
+    font-size: 12px;
+    width: 5000px;
+    border-bottom: 1px solid #95B8E7;
+}
+.tabs > li{
+    float: left;
+    display: inline-block;
+    margin: 0 4px -1px 0;
+    padding: 0;
+    position: relative;
+    border: 0;
+}
+.tabs li.tabs-selected a.tabs-inner {
+    border: 1px solid #95B8E7;
+    border-bottom: 1px solid #ffffff;
+}
+.tabs li a.tabs-inner {
+    display: inline-block;
+    text-decoration: none;
+    margin: 0;
+    padding: 0 10px;
+    height: 27px;
+    line-height: 27px;
+    text-align: center;
+    white-space: nowrap;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #95B8E7;
+    border-bottom: 1px solid #ffffff;
+    -moz-border-radius: 5px 5px 0 0;
+    -webkit-border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
+}
+.tabs li.tabs-selected a.tabs-inner {
+    background-color: #ffffff;
+    color: #0E2D5F;
+    background: -webkit-linear-gradient(top,#EFF5FF 0,#ffffff 100%);
+    background: -moz-linear-gradient(top,#EFF5FF 0,#ffffff 100%);
+    background: -o-linear-gradient(top,#EFF5FF 0,#ffffff 100%);
+    background: linear-gradient(to bottom,#EFF5FF 0,#ffffff 100%);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#EFF5FF,endColorstr=#ffffff,GradientType=0);
 }

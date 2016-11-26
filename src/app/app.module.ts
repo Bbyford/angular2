@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 
+
 import { ROUTING }  from './app.router';
 import { RouterModule }   from '@angular/router';
 
@@ -22,6 +23,7 @@ import { CoreModule } from './core';
     RouterModule,
     IndexAppModule,
     LoginAppModule,
+
     ROUTING
   ],
   bootstrap: [AppComponent]

@@ -1,16 +1,56 @@
-<div class="ui-g content">
-    <div class="ui-g-6">
-        <h3>Advanced</h3>
-        <p-autoComplete [(ngModel)]="brand" [suggestions]="filteredBrands" (completeMethod)="filterBrands($event)" [size]="30" [minLength]="1" placeholder="Hint: type 'v' or 'f'" [dropdown]="false" (onDropdownClick)="handleDropdownClick($event)">
-            <template let-brand>
-                <div class="ui-helper-clearfix" style="border-bottom:1px solid #D5D5D5">
-                    <div style="font-size:18px;float:right;margin:10px 10px 0 0">{{brand}}</div>
-                </div>
-            </template>
-        </p-autoComplete>
-        <span style="margin-left:50px">Brand: {{brand||'none'}}</span>
+<div class="content">
+    <toolbar style="width:100%"></toolbar>
+    <div class="ui-g">
+        <form>
+            <div class="ui-g-3">
+                <label>
+                    <span class="text-exp">地点编码</span>
+                    <input type="text">
+                </label>
+            </div>
+            <div class="ui-g-3">
+                <label>
+                    <span class="text-exp">地点名称</span>
+                    <input type="text">
+                </label>
+            </div>
+        </form>
     </div>
-    <div class="ui-g-6">
-        
+    <div class="ui-g tabs-wrap">
+        <ul class="tabs">
+            <li class="tabs-selected">
+                <a href="javascript:void(0)" class="tabs-inner">编辑地点信息</a>
+            </li>
+        </ul>
+    </div>
+    <div class="ui-g condiv">
+        <form #myform="ngForm">
+            <div class="ui-g">
+                <div class="ui-g-3">
+                    <label>
+                        <span class="text-exp">*地点编码</span>
+                        <input type="text">
+                    </label>
+                </div>
+                <div class="ui-g-3">
+                    <label>
+                        <span class="text-exp">*地点名称</span>
+                        <input type="text">
+                    </label>
+                </div>
+                <div class="ui-g-3">
+                    <label>
+                        <span class="text-exp">*公司名称</span>
+                        <input type="text">
+                    </label>
+                </div>
+                <div class="ui-g-3">
+                    <div>
+                        <span class="text-exp">*仓库级别</span>
+                        <p-dropdown [options]="ckbj" [(ngModel)]="selected" name="CKID"></p-dropdown>
+                    </div>
+                </div>
+            </div>
+        </form>
     </div>
 </div>
