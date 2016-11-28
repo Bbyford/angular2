@@ -4,8 +4,10 @@
 * @Last Modified by:   anchen
 * @Last Modified time: 2016-11-22 10:42:00
 */
-ul,li{
-    padding: 0;
+.nav > li > a.home{
+    display: block;
+    line-height: 40px;
+    text-align: center;
 }
 li.hidden-folded{
     padding: 0;
@@ -13,55 +15,56 @@ li.hidden-folded{
 li.hidden-folded a{
     padding: 10px 30px;
 }
-li.hidden-folded a.active{
-    background: #0c2b36;
-}
 div.auto{
     padding: 10px 20px;
 }
 a#sec {
     display: block;
+    line-height: 40px;
 }
 div.font-bold {
     line-height: 40px;
 }
-div.auto:hover,a#sec:hover,div.font-bold:hover{
-     background: #0c2b36;
+div.auto:hover,a#sec:hover,div.font-bold:hover,li.hidden-folded a.active,.nav-list > .menu-link  a.active,.sec a.active,.nav-list > .menu-link:hover{
+     background: #eee;
      cursor: pointer;
 }
 div.sec > a#sec,div.sec > div.font-bold{
     height: 40px;
-    padding-left: 50px;
+    padding-left: 60px;
     position: relative;
 }
 div.sec > #sec > span,div.sec > div.font-bold > span{
     position: absolute;
     top: 13px;
-    left: 30px;
+    left: 40px;
 }
 i.fa{
     padding: 0 10px;
-}
-.navi ul.nav li a{
-    height: 2000px;
-}
-.abc{
-    text-align: center;
-    position: relative;
-}
-.abc span.fa{
-    position: absolute;
-    left: 70px;
-    top: 13px;
-}
-.abc a.active,.sec a.active{
-    background: #0c2b36;
 }
 .dis{
     display: none;
 }
 .show .dis{
     display: block;
+}
+.nav-list > .menu-link{
+    height: 40px;
+    position: relative;
+    line-height: 40px; 
+}
+.nav-list > .menu-link:hover{
+    cursor: pointer;
+}
+.nav-list > .menu-link > a{
+    display: block;
+    padding-left: 75px;
+    position: relative;
+}
+.nav-list > .menu-link > a > span.fa{
+    position: absolute;
+    left: 55px;
+    top: 13px;
 }
 .navbar{
     position: fixed;
@@ -99,8 +102,9 @@ i.fa{
     position: fixed;
     left: 200px;
     right:0;
-    top: 50px;
-    height: 40px;
+    top: 70px;
+    height: 25px;
+    padding-left: 25px;
 }
 .chrome-tabs-shell .chrome-tabs li.chrome-tab-current{
     z-index: 99!important;

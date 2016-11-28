@@ -1,7 +1,7 @@
 <!-- list -->
 <ul class="nav">
-    <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
-        <a translate="aside.nav.HEADER" (click)="tabTo('index','home')" [class.active]="active==='home'">Home</a>
+    <li>
+        <a class="home" translate="aside.nav.HEADER" (click)="tabTo('index','home')" [class.active]="active==='home'">Home</a>
     </li>
     <li *ngFor="let datas of data">
         <div class="auto" (click)="datas.show = !datas.show;onSelect(datas)">
@@ -15,8 +15,8 @@
             <div class="sec" *ngFor="let items of datas.items">
                 <div class="font-bold" (click)="items.show = !items.show" *ngIf="items.items"><span [ngClass]="{'fa':true, 'fa-plus':items.show,'fa-minus':!items.show }" *ngIf="items.items"></span> {{items.label}}</div>
                 <a id="sec" (click)="items.show = !items.show;addTab(datas.label,items.label)" *ngIf="!items.items" [class.active]="active===items.label"><span [ngClass]="{'fa':true, 'fa-plus':items.show,'fa-minus':!items.show }" *ngIf="items.items"></span> {{items.label}}</a>
-                <ul class="nav" *ngIf="items.items" [hidden]="items.show">
-                    <li *ngFor="let menu of items.items" class="abc">
+                <ul class="nav-list" *ngIf="items.items" [hidden]="items.show">
+                    <li *ngFor="let menu of items.items" class="menu-link">
                         <a (click)="addTab(items.label,menu.label)" [class.active]="active===menu.label">
                             <span class="fa fa-file"></span>
                             <span>{{menu.label}}</span>

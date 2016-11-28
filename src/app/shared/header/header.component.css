@@ -1,3 +1,17 @@
-.nav .dropdown .active{
-    display: block;
+.main{
+    height: 100%;
+}
+.header-left,.header-right{  
+    height: 100%;
+    box-sizing: border-box;
+}
+.header-right{
+    flex: 1;
+}
+.header-left{
+    width: 200px;
+}
+.logo > div > a > img{
+    width: 200px;
+    height: 65px;
 }
