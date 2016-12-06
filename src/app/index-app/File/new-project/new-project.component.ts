@@ -9,6 +9,9 @@ import {SelectItem} from 'primeng/primeng';
 export class NewProjectComponent implements OnInit {
     ckbj : SelectItem[];
     selected: string;
+    model = {
+        name : null
+    }
     constructor() { }
     ngOnInit() {
         this.ckbj = [];

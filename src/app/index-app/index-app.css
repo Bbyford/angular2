@@ -13,6 +13,8 @@ header,section,footer{
     position: fixed;
     top: 0;
     left: 0;
+    background: #438eb9;
+    z-index: 9999;
 }
 .app-aside{
     width: 200px;
@@ -22,18 +24,15 @@ header,section,footer{
     bottom: 30px;
     /*background-color: #fafafa;
     border-right: 1px solid #e4e4e4;*/
-    background-color: #cccccc;
-    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e1e1e1), color-stop(100%, #b3b3b3));
-    background-image: -webkit-linear-gradient(top, #e1e1e1, #b3b3b3);
-    background-image: -moz-linear-gradient(top, #e1e1e1, #b3b3b3);
-    background-image: -o-linear-gradient(top, #e1e1e1, #b3b3b3);
-    background-image: linear-gradient(top, #e1e1e1, #b3b3b3);
+    background-color: #f2f2f2;
+    border-right: 1px solid #ccc;
+    z-index: 9999;
 }
 .app-container{
     height: 100%;
     width: 100%;
     box-sizing: border-box;
-    padding-top: 110px;
+    padding-top: 142px;
     padding-left: 200px;
     padding-bottom: 30px;
     overflow: auto;
@@ -45,4 +44,10 @@ header,section,footer{
     bottom: 0;
     left: 0px;
     right: 0;
+    text-align: center;
+    padding: 0;
+    color: rgb(102, 102, 102);
+    background-color: rgb(242, 242, 242);
+    border-top: 1px solid rgb(221, 221, 221);
+    z-index: 999;
 }

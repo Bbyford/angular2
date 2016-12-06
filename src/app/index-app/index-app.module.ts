@@ -2,7 +2,7 @@
 import { NgModule } from '@angular/core';
 import { ShareModule }  from '../shared';
 import { AutoCompleteModule } from 'primeng/primeng';
-import { DropdownModule } from 'primeng/primeng';
+import { AccordionModule,DropdownModule } from 'primeng/primeng';
 import { FormsModule } from '@angular/forms';
 
 // routes
@@ -48,6 +48,7 @@ import { IndexAppComponent } from './index-app.component';
   imports: [
     ShareModule,
     AutoCompleteModule,
+    AccordionModule,
     DropdownModule,
     FormsModule,
     ROUTING

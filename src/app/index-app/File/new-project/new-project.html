@@ -1,56 +1,149 @@
-<div class="content">
-    <toolbar style="width:100%"></toolbar>
-    <div class="ui-g">
-        <form>
-            <div class="ui-g-3">
-                <label>
-                    <span class="text-exp">地点编码</span>
-                    <input type="text">
-                </label>
-            </div>
-            <div class="ui-g-3">
-                <label>
-                    <span class="text-exp">地点名称</span>
-                    <input type="text">
-                </label>
-            </div>
-        </form>
-    </div>
-    <div class="ui-g tabs-wrap">
-        <ul class="tabs">
-            <li class="tabs-selected">
-                <a href="javascript:void(0)" class="tabs-inner">编辑地点信息</a>
-            </li>
-        </ul>
-    </div>
-    <div class="ui-g condiv">
-        <form #myform="ngForm">
-            <div class="ui-g">
-                <div class="ui-g-3">
-                    <label>
-                        <span class="text-exp">*地点编码</span>
-                        <input type="text">
-                    </label>
+<div class="content-wrap">
+    <div class="content">
+        <toolbar style="width:100%"></toolbar>
+        <p-accordion [multiple]="true">
+            <p-accordionTab header="Header 1" [selected]="true">
+                <div class="row">
+            <form #myform1="ngForm">
+                <div class="ui-g">
+                    <div class="ui-g-3">
+                        <label class="flex-box">
+                            <span class="text-exp">地点编码</span>
+                            <input type="text">
+                        </label>
+                    </div>
+                    <div class="ui-g-3">
+                        <label class="flex-box">
+                            <span class="text-exp">地点名称</span>
+                            <input type="text">
+                        </label>
+                    </div>
                 </div>
-                <div class="ui-g-3">
-                    <label>
+            </form>
+        </div>
+            </p-accordionTab>
+            <p-accordionTab header="Header 2" [selected]="true">
+                <div class="row">
+            <form #myform2="ngForm">
+                <div class="ui-g">
+                    <div class="ui-g-3">
+                        <label class="flex-box">
+                        <span class="text-exp">*地点编码</span>
+                        <input type="text" required [(ngModel)]="model.name" name="name">
+                    </label>
+                    </div>
+                    <div class="ui-g-3">
+                        <label class="flex-box">
                         <span class="text-exp">*地点名称</span>
                         <input type="text">
                     </label>
-                </div>
-                <div class="ui-g-3">
-                    <label>
+                    </div>
+                    <div class="ui-g-3">
+                        <label class="flex-box">
                         <span class="text-exp">*公司名称</span>
                         <input type="text">
                     </label>
-                </div>
-                <div class="ui-g-3">
-                    <div>
-                        <span class="text-exp">*仓库级别</span>
-                        <p-dropdown [options]="ckbj" [(ngModel)]="selected" name="CKID"></p-dropdown>
+                    </div>
+                    <div class="ui-g-3">
+                        <div class="flex-box">
+                            <span class="text-exp">*仓库级别</span>
+                            <div class="out-com">
+                                <p-dropdown [options]="ckbj" [(ngModel)]="selected" name="CKID"></p-dropdown>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </form>
+            </form>
+        </div>
+            </p-accordionTab>
+            <p-accordionTab header="Header 3" [selected]="true">
+                <div class="row">
+            <form #myform3="ngForm">
+                <div class="ui-g">
+                    <div class="ui-g-4">
+                        <label class="flex-box">
+                            <span class="text-exp">*地点编码111</span>
+                            <input type="text">
+                        </label>
+                    </div>
+                    <div class="ui-g-4">
+                        <label class="flex-box">
+                            <span class="text-exp">*地点名称111</span>
+                            <input type="text">
+                        </label>
+                    </div>
+                    <div class="ui-g-4">
+                        <div class="flex-box">
+                            <span class="text-exp">*仓库级别111</span>
+                            <div class="out-com">
+                                <p-dropdown [options]="ckbj" [(ngModel)]="selected" name="CKID"></p-dropdown>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+            </p-accordionTab>
+            <p-accordionTab header="Header 4" [selected]="true">
+                <div class="row">
+            <form #myform4="ngForm">
+                <div class="ui-g">
+                    <div class="ui-g-6">
+                        <label class="flex-box">
+                            <span class="text-exp">*地点编码111</span>
+                            <input type="text">
+                        </label>
+                    </div>
+
+                    <div class="ui-g-6">
+                        <div class="flex-box">
+                            <span class="text-exp">*仓库级别111</span>
+                            <div class="out-com">
+                                <p-dropdown [options]="ckbj" [(ngModel)]="selected" name="CKID"></p-dropdown>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+            </p-accordionTab>
+            <p-accordionTab header="Header 5" [selected]="true">
+                <div class="row">
+            <form #myform5="ngForm">
+                <div class="ui-g">
+                    <div class="ui-g-3">
+                        <label class="flex-box">
+                            <span class="text-exp">*地点编码111</span>
+                            <input type="text">
+                        </label>
+                    </div>
+                    <div class="ui-g-6">
+                        <label class="flex-box">
+                            <span class="text-exp">*地点名称111</span>
+                            <input type="text">
+                        </label>
+                    </div>
+                    <div class="ui-g-3">
+                        <div class="flex-box">
+                            <span class="text-exp">*仓库级别111</span>
+                            <div class="out-com">
+                                <p-dropdown [options]="ckbj" [(ngModel)]="selected" name="CKID"></p-dropdown>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+            </p-accordionTab>
+        </p-accordion>
+        
+        <!--<div class="ui-g tabs-wrap row">
+            <ul class="tabs">
+                <li class="tabs-selected">
+                    <a href="javascript:void(0)" class="tabs-inner">编辑地点信息</a>
+                </li>
+            </ul>
+        </div>-->
+            
     </div>
 </div>

@@ -46,7 +46,7 @@ export class SiderNavComponent implements OnInit {
   onSelect(datas: Data): void {
       if(this.selectData===datas){
         this.selectData = {
-          lebel: '',
+          label: '',
           icon: '',
           show: false,
           items: false

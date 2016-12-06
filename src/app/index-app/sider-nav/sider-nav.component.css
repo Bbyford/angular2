@@ -4,19 +4,44 @@
 * @Last Modified by:   anchen
 * @Last Modified time: 2016-11-22 10:42:00
 */
-.nav > li > a.home{
+.nav > li{
+    position: relative;
+    border-top: 1px solid #fcfcfc;  
+}
+.nav > li:last-of-type{
+    border-bottom: 1px solid #fcfcfc;
+}
+.nav > li > a{
     display: block;
-    line-height: 40px;
-    text-align: center;
+    position: relative;
+}
+.nav > li > a:hover::before{
+    display: block;
+    content: '';
+    position: absolute;
+    top: -1px;
+    bottom: 0;
+    left:0;
+    width: 3px;
+    overflow: hidden;
+    background: #3382af;
+}
+.nav > li > a{
+    background-color: #f9f9f9;
+    padding: 10px 20px;
+}
+.nav > li > a.home.active{
+    background-color: #fff;
+    color: #2b7dbc;
+}
+.nav > li > a.active{
+    color: #2b7dbc;
 }
 li.hidden-folded{
     padding: 0;
 }
 li.hidden-folded a{
     padding: 10px 30px;
-}
-div.auto{
-    padding: 10px 20px;
 }
 a#sec {
     display: block;
@@ -25,16 +50,17 @@ a#sec {
 div.font-bold {
     line-height: 40px;
 }
-div.auto:hover,a#sec:hover,div.font-bold:hover,li.hidden-folded a.active,.nav-list > .menu-link  a.active,.sec a.active,.nav-list > .menu-link:hover{
-     background: #eee;
+.nav > li > a:hover,a#sec:hover,div.font-bold:hover,li.hidden-folded a.active,.nav-list > .menu-link  a.active,.sec a.active,.nav-list > .menu-link:hover{
+     background: #fff;
      cursor: pointer;
+     color: #1963aa;
 }
-div.sec > a#sec,div.sec > div.font-bold{
+li.sec > a#sec,li.sec > div.font-bold{
     height: 40px;
     padding-left: 60px;
     position: relative;
 }
-div.sec > #sec > span,div.sec > div.font-bold > span{
+li.sec > #sec > span,li.sec > div.font-bold > span{
     position: absolute;
     top: 13px;
     left: 40px;
@@ -72,6 +98,7 @@ i.fa{
     right:0;
     top: 50px;
     min-height: 40px;
+    z-index: 999;
 }
 .navbar .navbar-list li{
     width: 100px;
@@ -98,14 +125,90 @@ i.fa{
 .navbar .navbar-list li a i:hover{
     color: #f00;
 }
-.chrome-tabs-shell{
+.top-bar{
     position: fixed;
     left: 200px;
-    right:0;
+    right: 0;
     top: 70px;
+}
+.chrome-tabs-shell{
     height: 25px;
     padding-left: 25px;
 }
 .chrome-tabs-shell .chrome-tabs li.chrome-tab-current{
     z-index: 99!important;
+}
+.pos-exp{
+    width: 100%;
+    background-color: #f1f1f1;
+    position: relative;
+    height: 36px;
+    padding-left: 25px;
+}
+.pos-exp > ul {
+    padding: 8px 0;
+    float: left;
+}
+.pos-exp > ul > li,.pos-exp > .process > ul > li{
+    position: relative;
+    float: left;
+}
+.pos-exp > ul > li::after,.process > ul::after{
+    clear: both;
+    content: '';
+}
+.pos-exp > .process{
+    float: right;
+    position: relative;
+    padding: 5px 0;
+    margin-right: 100px;
+}
+.pos-exp > .process > ul > li{
+    padding: 0 20px 2px 20px;
+    line-height: 24px;
+    color: #fff;
+}
+.pos-exp > .process > ul > .before{
+    background-color: #4b4b4b;
+    padding-left: 15px;
+}
+.process > ul > li.before:after,.process > ul > li.center:after,.process > ul > li.center:before,.process > ul > li.after:before {
+    position: absolute;
+    top: 0; 
+    display: inline-block !important;
+    content: '';
+}
+.process > ul > li.before:after,.process > ul > li.center:after{
+    right: 0;
+    border-top: 13px solid #f1f1f1;
+    border-bottom-color: #f1f1f1!important;
+}
+.process > ul > li.before:after{    
+    border-bottom: 13px solid #4b4b4b;
+    border-left: 13px solid #4b4b4b;
+}
+.process > ul > li.center{
+    background-color: #47a447;
+}
+.process > ul > li.center:after {
+    border-bottom: 13px solid #47a447;
+    border-left: 13px solid #47a447;
+}
+.process > ul > li.center:before {
+    left: 0;
+    border-top: 13px solid #47a447;
+    border-bottom: 13px solid #f1f1f1;
+    border-left: 13px solid #f1f1f1;
+    border-bottom-color: #47a447;
+}
+.process > ul > li.after{
+    background-color: #d2322d;
+    padding-right: 15px;
+}
+.process > ul > li.after:before {
+    left: 0;
+    border-top: 13px solid #d2322d;
+    border-bottom: 13px solid #f1f1f1;
+    border-left: 13px solid #f1f1f1;
+    border-bottom-color: #d2322d;
 }

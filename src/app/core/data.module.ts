@@ -1,5 +1,5 @@
 export class Data {
-    lebel: string;
+    label: string;
     icon: string;
     show: boolean;
     items: any;
