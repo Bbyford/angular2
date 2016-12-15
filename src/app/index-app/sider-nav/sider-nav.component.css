@@ -6,10 +6,10 @@
 */
 .nav > li{
     position: relative;
-    border-top: 1px solid #fcfcfc;  
+    border-top: 1px solid #d3d3d3;  
 }
 .nav > li:last-of-type{
-    border-bottom: 1px solid #fcfcfc;
+    border-bottom: 1px solid #d3d3d3;
 }
 .nav > li > a{
     display: block;
@@ -27,15 +27,15 @@
     background: #3382af;
 }
 .nav > li > a{
-    background-color: #f9f9f9;
+    background-color: #f3f3f3;
     padding: 10px 20px;
 }
 .nav > li > a.home.active{
-    background-color: #fff;
-    color: #2b7dbc;
+    background-color: #438eb9;
+    color: #f3f3f3;
 }
 .nav > li > a.active{
-    color: #2b7dbc;
+    color: #0092dc;
 }
 li.hidden-folded{
     padding: 0;
@@ -51,9 +51,9 @@ div.font-bold {
     line-height: 40px;
 }
 .nav > li > a:hover,a#sec:hover,div.font-bold:hover,li.hidden-folded a.active,.nav-list > .menu-link  a.active,.sec a.active,.nav-list > .menu-link:hover{
-     background: #fff;
+     background: #438eb9;
      cursor: pointer;
-     color: #1963aa;
+     color: #f3f3f3;
 }
 li.sec > a#sec,li.sec > div.font-bold{
     height: 40px;

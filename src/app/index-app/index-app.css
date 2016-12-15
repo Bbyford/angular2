@@ -24,8 +24,8 @@ header,section,footer{
     bottom: 30px;
     /*background-color: #fafafa;
     border-right: 1px solid #e4e4e4;*/
-    background-color: #f2f2f2;
-    border-right: 1px solid #ccc;
+    background-color: #fff;
+    border-right: 1px solid #d3d3d3;
     z-index: 9999;
 }
 .app-container{
