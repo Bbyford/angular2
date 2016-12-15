@@ -1,8 +1,7 @@
 // modules
 import { NgModule } from '@angular/core';
 import { ShareModule }  from '../shared';
-import { AutoCompleteModule } from 'primeng/primeng';
-import { AccordionModule,DropdownModule } from 'primeng/primeng';
+import { AccordionModule,DropdownModule,AutoCompleteModule  } from 'primeng/primeng';
 import { FormsModule } from '@angular/forms';
 
 // routes

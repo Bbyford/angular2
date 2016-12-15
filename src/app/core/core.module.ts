@@ -1,12 +1,14 @@
 import { NgModule, SkipSelf, Optional } from '@angular/core';
 import { DataService } from './data.service';
+import { BlockUIService } from './blockUi.service';
 import { HttpModule } from '@angular/http';
 @NgModule({
     imports: [
         HttpModule        
     ],
     providers: [
-        DataService
+        DataService,
+        BlockUIService
     ]
 })
 

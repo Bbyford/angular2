@@ -1,24 +1,39 @@
 <!-- header start  -->
 <header class="app-header navbar">
-    <app-header></app-header>
+  <app-header></app-header>
 </header>
 <!-- header end  -->
-
 <!-- content start  -->
 <section class="app-aside hidden-xs bg-black">
-    <div calss="navi-wrap">
-        <nav class="navi">
-            <app-sider-nav></app-sider-nav>
-        </nav>
-    </div>
+  <div calss="navi-wrap">
+    <nav class="navi">
+      <app-sider-nav></app-sider-nav>
+    </nav>
+  </div>
 </section>
 <section class="app-container">
-    <router-outlet></router-outlet>
+  <router-outlet>
+  </router-outlet>
+  <div class="sk-circle-wrap" *ngIf="blockUI">
+      <div class="sk-circle">
+        <div class="sk-circle1 sk-child"></div>
+        <div class="sk-circle2 sk-child"></div>
+        <div class="sk-circle3 sk-child"></div>
+        <div class="sk-circle4 sk-child"></div>
+        <div class="sk-circle5 sk-child"></div>
+        <div class="sk-circle6 sk-child"></div>
+        <div class="sk-circle7 sk-child"></div>
+        <div class="sk-circle8 sk-child"></div>
+        <div class="sk-circle9 sk-child"></div>
+        <div class="sk-circle10 sk-child"></div>
+        <div class="sk-circle11 sk-child"></div>
+        <div class="sk-circle12 sk-child"></div>
+      </div>
+    </div>
 </section>
 <!-- content end  -->
-
 <!-- footer start  -->
 <footer class="app-footer">
-    <app-footer></app-footer>
+  <app-footer></app-footer>
 </footer>
 <!-- footer end  -->
