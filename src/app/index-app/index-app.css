@@ -13,7 +13,7 @@ header,section,footer{
     position: fixed;
     top: 0;
     left: 0;
-    background: #438eb9;
+    background: #fff;
     z-index: 9999;
 }
 .app-aside{
