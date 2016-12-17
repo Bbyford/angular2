@@ -1,15 +1,34 @@
-html,body,ul,li,label,h1,h2,h3,h4,h5,h6,p,table,tr,td,input{
+html,
+body,
+ul,
+li,
+label,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+table,
+tr,
+td,
+input {
     margin: 0;
     padding: 0;
 }
-html,body{
+
+html,
+body {
     width: 100%;
     height: 100%;
 }
+
 html {
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-body{
+
+body {
     font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 12px;
     -webkit-font-smoothing: antialiased;
@@ -21,64 +40,114 @@ body{
     user-select: none;
     overflow: hidden;
 }
-ul,li{
+
+ul,
+li {
     list-style: none;
 }
-i{
+
+i {
     font-style: normal;
 }
-form{
+
+form {
     display: block;
 }
-a{
+
+a {
     text-decoration: none;
     color: #3c3c3c;
 }
+
+
 /*-----ng-form------------*/
-.ng-valid[required], .ng-valid.required  {
-  border-left: 3px solid #42A948!important; /* green */
+
+.ng-valid[required],
+.ng-valid.required {
+    border-left: 3px solid #42A948!important;
+    /* green */
 }
 
-.ng-invalid:not(form)  {
-  border-left: 3px solid #a94442!important; /* red */
+.ng-invalid:not(form) {
+    border-left: 3px solid #a94442!important;
+    /* red */
 }
+
 
 /*------ui-g reset------------*/
-.ui-g-1, .ui-g-2, .ui-g-3, .ui-g-4, .ui-g-5, .ui-g-6, .ui-g-7, .ui-g-8, .ui-g-9, .ui-g-10, .ui-g-11, .ui-g-12{
+
+.ui-g-1,
+.ui-g-2,
+.ui-g-3,
+.ui-g-4,
+.ui-g-5,
+.ui-g-6,
+.ui-g-7,
+.ui-g-8,
+.ui-g-9,
+.ui-g-10,
+.ui-g-11,
+.ui-g-12 {
     padding: 0!important;
 }
-.ui-dropdown{
+
+.ui-dropdown {
     display: block!important;
     width: auto!important;
 }
-.ui-dropdown-label{
+
+.ui-dropdown-label {
     text-indent: 10px;
     padding: 2px!important;
 }
-.ui-dropdown.ui-widget .ui-dropdown-trigger .fa, .ui-multiselect.ui-widget .ui-multiselect-trigger .fa{
+
+.ui-dropdown.ui-widget .ui-dropdown-trigger .fa,
+.ui-multiselect.ui-widget .ui-multiselect-trigger .fa {
     margin-top: 4px!important;
 }
-.ui-accordion .ui-accordion-content{
+
+.ui-accordion .ui-accordion-content {
     overflow: inherit!important;
 }
-.ui-accordion .ui-accordion-content{
+
+.ui-accordion .ui-accordion-content {
     padding: 0!important;
 }
+
+.ui-datatable-tablewrapper table {
+    height: 200px;
+}
+
+.ui-datatable-scrollable-body table {
+    height: 200px;
+}
+
+.ui-panel .ui-panel-content {
+    padding: 0.5em 0!important;
+}
+
+
 /*-------content------- */
-.content-wrap{
+
+.content-wrap {
     width: 100%;
 }
-.content{
+
+.content {
     padding-left: 25px;
     padding-right: 120px;
 }
-button{
+
+button {
     width: 78px;
 }
-.input-group{
+
+.input-group {
     height: 30px;
 }
-input[type="text"],input[type="password"]{
+
+input[type="text"],
+input[type="password"] {
     height: 18px;
     padding: 2px 0;
     border: 1px solid #ccc;
@@ -86,23 +155,28 @@ input[type="text"],input[type="password"]{
     text-indent: 4px;
     flex: 1;
 }
-.row{
-    margin-bottom: 15px;
+
+.row {
+    margin-bottom: 8px;
 }
-.content .ui-g .text-exp{
+
+.content .ui-g .text-exp {
     display: block;
     float: left;
     text-align: right;
     width: 96px;
     padding: 3px 5px 3px 0;
 }
-.content .ui-g label.flex-box,.content .ui-g div.flex-box{
+
+.content .ui-g label.flex-box,
+.content .ui-g div.flex-box {
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
 }
-.content .ui-g div.flex-box .out-com{
+
+.content .ui-g div.flex-box .out-com {
     flex: 1;
 }

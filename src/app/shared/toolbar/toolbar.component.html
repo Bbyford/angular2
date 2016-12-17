@@ -12,12 +12,12 @@
         <button pButton type="text" (click)="save()" icon="fa-save (alias)" [disabled]="toggle" label="保存"></button>
     </div>
     <div class="ui-g-1">
-       <button pButton type="text" (click)="cancel()" icon="fa-close (alias)" [disabled]="toggle" label="取消"></button>
+        <button pButton type="text" (click)="cancel()" icon="fa-close (alias)" [disabled]="toggle" label="取消"></button>
     </div>
     <div class="ui-g-1">
-       <button pButton type="text" (click)="search()" icon="fa-search" [disabled]="!toggle" label="查询"></button>
+        <button pButton type="text" (click)="search()" icon="fa-search" [disabled]="!toggle" label="查询"></button>
     </div>
     <div class="ui-g-1" *ngIf="!show">
-       <button pButton type="text" (click)="export()" icon="fa-copy (alias)" [disabled]="!toggle" label="导出"></button>
+        <button pButton type="text" (click)="export()" icon="fa-copy (alias)" [disabled]="!toggle" label="导出"></button>
     </div>
 </div>

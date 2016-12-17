@@ -44,25 +44,25 @@ export class DataService {
         return Observable.throw(errorMessage);
     }
     //不用改动服务端  post请求
-    public RequestPost(data: any, extraHttpRequestParams?: any): Observable<any> {
-        const path = "http://localhost:8080/YYERP/aut/czyAction/doNotNeedSession_login.action"
-
+    public RequestPost(data: any,  url: string): Observable<any> {
         let queryParameters = new URLSearchParams();
         let headerParams = new Headers();
 
 
         let formParams = new URLSearchParams();
         headerParams.set('Content-Type', 'application/x-www-form-urlencoded');
-
-        formParams.append('pdata', data);
+        for(var key in data){
+            formParams.append(key, JSON.stringify(data[key]));
+        }
+        console.info(formParams);   
         let requestOptions: RequestOptionsArgs = {
             method: 'POST',
             headers: headerParams,
             search: queryParameters
         };
         requestOptions.body = formParams.toString();
-
-        return this.http.request(path, requestOptions)
+        console.log(requestOptions.body);
+        return this.http.request(url, requestOptions)
             .map((response: Response) => {
                 if (response.status === 401 || response.status === 403) { window.location.href = '/#/login'; return response.json(); } else if (response.status === 204) {
                     return response.json();

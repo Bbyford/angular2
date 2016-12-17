@@ -29,8 +29,9 @@ export class LoginAppComponent implements OnInit{
   }
   onSubmit(){
       this.value = {};
-      this.value['pdata'] = JSON.stringify(this.user);
+      this.value['pdata'] = this.user;
         let path = JSON.stringify(this.user);
+        let url = "http://localhost:8080/YYERP/aut/czyAction/doNotNeedSession_login.action";
      //  this.path['pdata'] = path;
      // // this.path = JSON.stringify(this.path);
      // var headers = new Headers();
@@ -43,7 +44,7 @@ export class LoginAppComponent implements OnInit{
                   this.router.navigate(["index/home"]);
               }else{alert("用户名或密码错误")}});  */
     // 不用改动服务端 post方式
-    this.myhttp.RequestPost(path).subscribe(res => {
+    this.myhttp.RequestPost(this.value,url).subscribe(res => {
             this.data = res;
             console.log(this.data);
             if(this.data.success===true){
