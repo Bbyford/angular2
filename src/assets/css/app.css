@@ -126,6 +126,10 @@ a {
     padding: 0.5em 0!important;
 }
 
+.ui-datatable-odd {
+    background-color: #eee!important;
+}
+
 
 /*-------content------- */
 
