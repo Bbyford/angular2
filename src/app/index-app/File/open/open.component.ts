@@ -10,6 +10,7 @@ import { NgForm } from '@angular/forms';
 
 export class OpenComponent implements OnInit {
     FormDatas : any;
+    form: FormGroup;
     url = "../../mock-data/formData.json";
     constructor(
       private getDataService : DataService,

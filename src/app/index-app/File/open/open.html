@@ -2,10 +2,11 @@
     <div class="content">
         <toolbar style="width:100%"></toolbar>
         <div class="row">
-            <form #myform1="ngForm">
-                <form-base *ngFor="let FormData of FormDatas" [field]="FormData"></form-base>
+            <form>
+                <ng-container *ngFor="let FormData of FormDatas">
+                    <form-base [field]="FormData"></form-base>
+                </ng-container>
             </form>
-            {{myform1.value | json}}
-        </div>    
+        </div>
     </div>
 </div>

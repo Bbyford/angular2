@@ -1,6 +1,5 @@
 {
-    "data": [
-        {
+    "data": [{
             "type": "text",
             "name": "GSID",
             "title": "*公司编码",
@@ -55,12 +54,25 @@
             "title": "*仓库级别",
             "class": "ui-g-3",
             "options": [
-                {"label":"请选择仓库级别","value":null},
-                {"label":"中心仓","value":"中心仓"},
-                {"label":"区域中心仓","value":"区域中心仓"},
-                {"label":"门店仓库","value":"门店仓库"}
+                { "label": "请选择仓库级别", "value": null },
+                { "label": "中心仓", "value": "中心仓" },
+                { "label": "区域中心仓", "value": "区域中心仓" },
+                { "label": "门店仓库", "value": "门店仓库" }
             ]
+        },
+        {
+            "type": "checkbox",
+            "name": "YXBJ",
+            "title": "*有效标记",
+            "required": true,
+            "class": "ui-g-3"
+        },
+        {
+            "type": "date",
+            "name": "YXBJ",
+            "title": "*日期",
+            "required": true,
+            "class": "ui-g-4"
         }
-
     ]
 }

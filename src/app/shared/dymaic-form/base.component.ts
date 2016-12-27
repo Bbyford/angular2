@@ -7,5 +7,6 @@ import { FormGroup, FormControl } from "@angular/forms";
 })
 export class FormBaseComponent {
   @Input() field;
+  @Input() form: FormGroup;
   model: any;
 }

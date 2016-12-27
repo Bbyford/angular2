@@ -1,15 +1,27 @@
-
-    <div *ngIf="field.type == 'text'" [ngClass]="field.class" class="mb8">
-        <label class="flex-box">
+<div *ngIf="field.type == 'text'" [ngClass]="field.class" class="mb8">
+    <label class="flex-box">
             <span class="text-exp" >{{field.title}}</span>
             <input type="text" [required]="field.required" [attr.name]="field.name" [(ngModel)]="model" ngModel name="{{field.name}}" />
         </label>
-    </div>
-    <div *ngIf="field.type == 'select'" [ngClass]="field.class" class="mb8">
-        <div class="flex-box" >
-            <span class="text-exp">{{field.title}}</span>
-            <div class="out-com">
-                <p-dropdown [options]="field.options" [(ngModel)]="model" [attr.name]="field.name" ngModel></p-dropdown>
-            </div>
+</div>
+<div *ngIf="field.type == 'select'" [ngClass]="field.class" class="mb8">
+    <div class="flex-box">
+        <span class="text-exp">{{field.title}}</span>
+        <div class="out-com">
+            <p-dropdown [options]="field.options" [(ngModel)]="model" [attr.name]="field.name" ngModel></p-dropdown>
         </div>
     </div>
+</div>
+<div *ngIf="field.type == 'checkbox'" [ngClass]="field.class" class="mb8">
+    <div class="flex-box">
+        <span class="text-exp">{{field.title}}</span>
+        <p-checkbox binary="false" [attr.name]="field.name" [(ngModel)]="model" ngModel style="margin-top:2px"></p-checkbox>
+    </div>
+</div>
+<div *ngIf="field.type == 'date'" [ngClass]="field.class" class="mb8">
+    <div class="flex-box">
+        <span class="text-exp">{{field.title}}</span>
+        <p-calendar [(ngModel)]="model" [showIcon]="true"></p-calendar>
+    </div>
+
+</div>
