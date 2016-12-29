@@ -1,59 +1,59 @@
 {
     "data": [{
-            "type": "text",
-            "name": "GSID",
-            "title": "*公司编码",
+            "controlType": "text",
+            "controlName": "GSID",
+            "controlTitle": "*公司编码",
             "required": true,
-            "class": "ui-g-3"
+            "ElemClass": "ui-g-3"
         },
         {
-            "type": "text",
-            "name": "GSMC",
-            "title": "*公司名称",
+            "controlType": "text",
+            "controlName": "GSMC",
+            "controlTitle": "*公司名称",
             "required": true,
-            "class": "ui-g-3"
+            "ElemClass": "ui-g-3"
         },
         {
-            "type": "text",
-            "name": "GSJC",
-            "title": "*公司简称",
+            "controlType": "text",
+            "controlName": "GSJC",
+            "controlTitle": "*公司简称",
             "required": true,
-            "class": "ui-g-3"
+            "ElemClass": "ui-g-3"
         },
         {
-            "type": "text",
-            "name": "GSYWMC",
-            "title": "公司英文名称",
+            "controlType": "text",
+            "controlName": "GSYWMC",
+            "controlTitle": "公司英文名称",
             "required": false,
-            "class": "ui-g-3"
+            "ElemClass": "ui-g-3"
         },
         {
-            "type": "text",
-            "name": "GJID",
-            "title": "*国家名称",
+            "controlType": "text",
+            "controlName": "GJID",
+            "controlTitle": "*国家名称",
             "required": true,
-            "class": "ui-g-2"
+            "ElemClass": "ui-g-2"
         },
         {
-            "type": "text",
-            "name": "SFID",
-            "title": "*省份名称",
+            "controlType": "text",
+            "controlName": "SFID",
+            "controlTitle": "*省份名称",
             "required": true,
-            "class": "ui-g-4"
+            "ElemClass": "ui-g-4"
         },
         {
-            "type": "text",
-            "name": "CSID",
-            "title": "*城市名称",
+            "controlType": "text",
+            "controlName": "CSID",
+            "controlTitle": "*城市名称",
             "required": true,
-            "class": "ui-g-6"
+            "ElemClass": "ui-g-6"
         },
         {
-            "type": "select",
-            "name": "CKJB",
-            "title": "*仓库级别",
-            "class": "ui-g-3",
-            "options": [
+            "controlType": "select",
+            "controlName": "CKJB",
+            "controlTitle": "*仓库级别",
+            "ElemClass": "ui-g-3",
+            "Selectoptions": [
                 { "label": "请选择仓库级别", "value": null },
                 { "label": "中心仓", "value": "中心仓" },
                 { "label": "区域中心仓", "value": "区域中心仓" },
@@ -61,18 +61,18 @@
             ]
         },
         {
-            "type": "checkbox",
+            "controlType": "checkbox",
             "name": "YXBJ",
-            "title": "*有效标记",
+            "controlTitle": "*有效标记",
             "required": true,
-            "class": "ui-g-3"
+            "ElemClass": "ui-g-3"
         },
         {
-            "type": "date",
-            "name": "YXBJ",
-            "title": "*日期",
+            "controlType": "date",
+            "controlName": "YXBJ",
+            "controlTitle": "*日期",
             "required": true,
-            "class": "ui-g-6"
+            "ElemClass": "ui-g-6"
         }
     ]
 }

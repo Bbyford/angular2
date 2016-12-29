@@ -2,7 +2,7 @@
 import { NgModule } from '@angular/core';
 import { ShareModule }  from '../shared';
 import { AccordionModule,DropdownModule,AutoCompleteModule,PanelModule,CheckboxModule,DataTableModule,SharedModule} from 'primeng/primeng';
-import { FormsModule } from '@angular/forms';
+import { FormsModule , ReactiveFormsModule} from '@angular/forms';
 
 // routes
 import { ROUTING }  from './index-app.routes';
@@ -51,6 +51,7 @@ import { IndexAppComponent } from './index-app.component';
     DropdownModule,
     PanelModule,
     FormsModule,
+    ReactiveFormsModule,
     CheckboxModule,
     DataTableModule,
     SharedModule,

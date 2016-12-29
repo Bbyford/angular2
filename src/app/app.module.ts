@@ -21,6 +21,7 @@ import { CoreModule } from './core';
     BrowserModule,
     ShareModule,
     HttpModule,
+    CoreModule,
     RouterModule,
     IndexAppModule,
     LoginAppModule,

@@ -1,28 +1,30 @@
 import  { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup, FormControl } from '@angular/forms';
 import { Router }  from '@angular/router';
-import { DataService  }  from '../../../core';
-import { NgForm } from '@angular/forms';
+import { DataService, FormControlService, FormDataBase  }  from '../../../core';
+
 @Component({
     selector: 'open',
-    templateUrl: './open.html'
+    templateUrl: './open.html',
+    providers: [ DataService,FormControlService ]
 })
 
 export class OpenComponent implements OnInit {
-    FormDatas : any;
+    FormDatas : FormDataBase<any>[] = [];
     form: FormGroup;
     url = "../../mock-data/formData.json";
     constructor(
       private getDataService : DataService,
+      private getFormControlService : FormControlService,
       private router : Router
     ) { }
-
     getData(): void {
       this.getDataService
-          .getDate(this.url)
-          .subscribe(res => {this.FormDatas = res;console.log(res)});
+          .getFormData(this.url)
+          .subscribe(res => {this.FormDatas = res;this.form = this.getFormControlService.toFormGroup(this.FormDatas)});
     }
     ngOnInit(): void{
         this.getData();
+        this.form = this.getFormControlService.toFormGroup(this.FormDatas);
     }
 }

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Headers, Http, Response, URLSearchParams, RequestOptionsArgs, RequestOptions, Request ,RequestMethod} from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { Data } from './data.module';
+import { FormDataBase } from './formdata-base';
 
 @Injectable()
 
@@ -12,6 +13,11 @@ export class DataService {
     constructor(private http: Http) { }
     //请求本地json数据方式
     getDate(url: string): Observable<Data[]> {
+        return this.http.get(url)
+            .map(res => res.json().data)
+            .catch(this.handleError);
+    }
+    getFormData(url: string): Observable<FormDataBase<any>[]> {
         return this.http.get(url)
             .map(res => res.json().data)
             .catch(this.handleError);
