@@ -21,10 +21,14 @@ export class OpenComponent implements OnInit {
     getData(): void {
       this.getDataService
           .getFormData(this.url)
-          .subscribe(res => {this.FormDatas = res;this.form = this.getFormControlService.toFormGroup(this.FormDatas)});
+          .subscribe(res => {this.FormDatas = res;
+               console.info(res);
+               this.form = this.getFormControlService.toFormGroup(this.FormDatas);
+            });
     }
     ngOnInit(): void{
+        debugger;
         this.getData();
-        this.form = this.getFormControlService.toFormGroup(this.FormDatas);
+        // this.form = this.getFormControlService.toFormGroup(this.FormDatas);
     }
 }

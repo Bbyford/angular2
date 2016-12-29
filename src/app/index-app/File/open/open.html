@@ -2,9 +2,9 @@
     <div class="content">
         <toolbar style="width:100%"></toolbar>
         <div class="row">
-            <form [formGroup]="form">
+            <form>
                 <ng-container *ngFor="let FormData of FormDatas">
-                    <form-base [field]="FormData" [form]="form"></form-base>
+                    <form-base [field]="FormData"></form-base>
                 </ng-container>
             </form>
         </div>
