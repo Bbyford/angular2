@@ -1,12 +1,14 @@
 <div class="content-wrap">
     <div class="content">
         <toolbar style="width:100%"></toolbar>
-        <div class="row">
+        <div class="row" *ngIf="lock">
             <form [formGroup]="form">
                 <ng-container *ngFor="let FormData of FormDatas">
                     <form-base [field]="FormData" [form]="form"></form-base>
                 </ng-container>
             </form>
+            <div>{{form.value | json}}</div>
         </div>
+        <button (click)="test()">点击</button>
     </div>
 </div>

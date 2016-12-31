@@ -1,5 +1,6 @@
 {
     "data": [{
+            "value": 1,
             "controlType": "text",
             "controlName": "GSID",
             "controlTitle": "*公司编码",
@@ -69,7 +70,7 @@
         },
         {
             "controlType": "date",
-            "controlName": "YXBJ",
+            "controlName": "Date",
             "controlTitle": "*日期",
             "required": true,
             "ElemClass": "ui-g-6"

@@ -59,6 +59,7 @@ a {
     color: #3c3c3c;
 }
 
+
 /*-----ng-form------------*/
 
 .ng-valid[required],
@@ -67,7 +68,7 @@ a {
     /* green */
 }
 
-.ng-invalid:not(form) {
+.ng-invalid:not(div):not(p-calendar):not(p-checkbox) {
     border-left: 3px solid #a94442!important;
     /* red */
 }
@@ -128,9 +129,11 @@ a {
 .ui-datatable-odd {
     background-color: #eee!important;
 }
-.ui-datepicker{
+
+.ui-datepicker {
     width: auto!important;
 }
+
 
 /*-------content------- */
 
@@ -186,6 +189,7 @@ div.flex-box {
 .out-com {
     flex: 1;
 }
-.mb8{
+
+.mb8 {
     margin-bottom: 8px;
 }
