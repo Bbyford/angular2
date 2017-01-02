@@ -1,0 +1,139 @@
+{
+    "data": [{
+            "controlType": "text",
+            "controlName": "GSID",
+            "controlTitle": "*公司编码",
+            "required": true,
+            "ElemClass": "ui-g-3"
+        },
+        {
+            "controlType": "text",
+            "controlName": "GSMC",
+            "controlTitle": "*公司名称",
+            "required": true,
+            "ElemClass": "ui-g-6"
+        },
+        {
+            "controlType": "text",
+            "controlName": "GSJC",
+            "controlTitle": "*公司简称",
+            "required": true,
+            "ElemClass": "ui-g-3"
+        },
+        {
+            "controlType": "text",
+            "controlName": "GSYWMC",
+            "controlTitle": "公司英文名称",
+            "required": false,
+            "ElemClass": "ui-g-3"
+        },
+        {
+            "controlType": "text",
+            "controlName": "GJID",
+            "controlTitle": "*国家名称",
+            "required": true,
+            "ElemClass": "ui-g-3",
+            "searchBtn": true
+        },
+        {
+            "controlType": "text",
+            "controlName": "SFID",
+            "controlTitle": "*省份名称",
+            "required": true,
+            "ElemClass": "ui-g-3",
+            "searchBtn": true
+        },
+        {
+            "controlType": "text",
+            "controlName": "CSID",
+            "controlTitle": "*城市名称",
+            "required": true,
+            "ElemClass": "ui-g-3",
+            "searchBtn": true
+        },
+        {
+            "controlType": "text",
+            "controlName": "ZCDZ",
+            "controlTitle": "*注册地址",
+            "required": true,
+            "ElemClass": "ui-g-6"
+        },
+        {
+            "controlType": "text",
+            "controlName": "YZBM",
+            "controlTitle": "邮政编码",
+            "required": true,
+            "ElemClass": "ui-g-3"
+        },
+        {
+            "controlType": "text",
+            "controlName": "GSSH",
+            "controlTitle": "*公司税号",
+            "required": true,
+            "ElemClass": "ui-g-3"
+        },
+        {
+            "controlType": "text",
+            "controlName": "GSKHYH",
+            "controlTitle": "*公司开户银行",
+            "required": true,
+            "ElemClass": "ui-g-3"
+        },
+        {
+            "controlType": "text",
+            "controlName": "GSZH",
+            "controlTitle": "*公司账号",
+            "required": true,
+            "ElemClass": "ui-g-3"
+        },
+        {
+            "controlType": "text",
+            "controlName": "LXR",
+            "controlTitle": "*联系人",
+            "required": true,
+            "ElemClass": "ui-g-3"
+        },
+        {
+            "controlType": "text",
+            "controlName": "LXDH",
+            "controlTitle": "*联系电话",
+            "required": true,
+            "ElemClass": "ui-g-3"
+        },
+        {
+            "controlType": "text",
+            "controlName": "SJHM",
+            "controlTitle": "*手机号码",
+            "required": true,
+            "ElemClass": "ui-g-3"
+        },
+        {
+            "controlType": "text",
+            "controlName": "BZ",
+            "controlTitle": "备注",
+            "required": true,
+            "ElemClass": "ui-g-3"
+        },
+        {
+            "controlType": "checkbox",
+            "controlName": "YXBJ",
+            "controlTitle": "*有效标记",
+            "required": true,
+            "ElemClass": "ui-g-3"
+        },
+        {
+            "controlType": "text",
+            "controlName": "KHID",
+            "controlTitle": "客户编码",
+            "required": true,
+            "ElemClass": "ui-g-3"
+        },
+        {
+            "controlType": "text",
+            "controlName": "GYSID",
+            "controlTitle": "供应商编码",
+            "required": true,
+            "ElemClass": "ui-g-3"
+        }
+    ]
+}

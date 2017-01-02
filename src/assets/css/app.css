@@ -52,6 +52,7 @@ i {
 
 form {
     display: block;
+    overflow: hidden;
 }
 
 a {
@@ -68,7 +69,7 @@ a {
     /* green */
 }
 
-.ng-invalid:not(div):not(p-calendar):not(p-checkbox) {
+.ng-invalid:not(div):not(p-calendar):not(p-checkbox):not(form) {
     border-left: 3px solid #a94442!important;
     /* red */
 }
@@ -184,6 +185,7 @@ div.flex-box {
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    position: relative;
 }
 
 .out-com {
@@ -192,4 +194,18 @@ div.flex-box {
 
 .mb8 {
     margin-bottom: 8px;
+}
+
+label.flex-box .search-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+}
+
+label.flex-box .search-btn:hover {
+    cursor: pointer;
 }

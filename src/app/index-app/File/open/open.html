@@ -6,6 +6,12 @@
                 <ng-container *ngFor="let FormData of FormDatas">
                     <form-base [field]="FormData" [form]="form"></form-base>
                 </ng-container>
+                <div class="ui-g-4 mb8">
+                    <label class="flex-box">
+                        <span class="text-exp">test</span>
+                        <input type="text" formControlName="ABC" />
+                    </label>
+                </div>
             </form>
             <div>{{form.value | json}}</div>
         </div>

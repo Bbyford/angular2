@@ -22,8 +22,17 @@ export class OpenComponent implements OnInit {
     getData(): void {
       this.getDataService
           .getFormData(this.url)
-          .subscribe(res => {this.FormDatas = res; console.log(res);     
+          .subscribe(res => {this.FormDatas = res; console.log(res);
+          this.FormDatas.push(
+              {
+                controlName: "ABC",
+                controlTitle: "*日期",
+                required: true,
+                ElemClass: "ui-g-6"
+              }
+          )
           this.form = this.getFormControlService.toFormGroup(this.FormDatas);
+          console.log(this.form);
           this.lock = true; });
     }
     ngOnInit(): void{
@@ -39,6 +48,6 @@ export class OpenComponent implements OnInit {
         console.log(this.form);
          console.log(this.form.controls["GSID"].value);
          this.form.controls["GSID"].setValue(2);
-         this.form.setValue({"GSID":2222,"GSMC":"YUANYUAN","GSJC":"13","GSYWMC":"abc","GJID":"zhongguo","SFID":"guangdong","CSID":"guangzhou","CKJB":"中心仓","YXBJ":1,"Date":new Date("2016-12-31")});
+         this.form.setValue({"GSID":2222,"GSMC":"YUANYUAN","GSJC":"13","GSYWMC":"abc","GJID":"zhongguo","SFID":"guangdong","CSID":"guangzhou","CKJB":"中心仓","YXBJ":1,"Date":null,"ABC":''});
     }
 }

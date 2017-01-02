@@ -33,7 +33,8 @@
             "controlName": "GJID",
             "controlTitle": "*国家名称",
             "required": true,
-            "ElemClass": "ui-g-2"
+            "ElemClass": "ui-g-2",
+            "searchBtn": true
         },
         {
             "controlType": "text",

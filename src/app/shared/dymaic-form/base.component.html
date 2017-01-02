@@ -3,6 +3,7 @@
         <label class="flex-box">
             <span class="text-exp" >{{field.controlTitle}}</span>
             <input [type]="field.controlType" [required]="field.required" [formControlName]="field.controlName" />
+            <span class="fa fa-search search-btn" *ngIf="field.searchBtn"></span>
         </label>
     </div>
     <div *ngIf="field.controlType == 'select'">
@@ -22,7 +23,7 @@
     <div *ngIf="field.controlType == 'date'">
         <div class="flex-box">
             <span class="text-exp">{{field.controlTitle}}</span>
-            <p-calendar [showIcon]="true" [formControlName]="field.controlName"></p-calendar>
+            <p-calendar [showIcon]="true" [formControlName]="field.controlName" readonlyInput="null"></p-calendar>
         </div>
 
     </div>

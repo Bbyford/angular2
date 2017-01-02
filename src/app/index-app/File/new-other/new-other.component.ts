@@ -1,15 +1,24 @@
-import  { Component } from '@angular/core';
+import  { Component, OnInit } from '@angular/core';
+import { FormBuilder,FormGroup, FormControl } from '@angular/forms';
+import { Router }  from '@angular/router';
+import { DataService, FormControlService, FormDataBase  }  from '../../../core';
 
 @Component({
     selector: 'new-other',
     templateUrl: './new-other.html'
 })
 
-export class NewOtherComponent {
-    model = {
-
-    };
+export class NewOtherComponent implements OnInit {
+    constructor(
+      private getDataService : DataService,
+      private getFormControlService : FormControlService,
+      private router : Router
+    ) { }
+    FormDatas : FormDataBase<any>[] = [];
+    form: FormGroup;
+    lock = false;
     cars: any;
+    url ="../../mock-data/defGSXX.json";
     cancelData: any;
     searchData = {
         data: {
@@ -29,5 +38,15 @@ export class NewOtherComponent {
     }
     cancelDataEvent(event):void{
         this.cancelData = event;
+    }
+    ngOnInit(): void{
+        this.getData();                
+    }
+    getData(): void {
+      this.getDataService
+          .getFormData(this.url)
+          .subscribe(res => {this.FormDatas = res; console.log(res);     
+          this.form = this.getFormControlService.toFormGroup(this.FormDatas);
+          this.lock = true; });
     }
 }
