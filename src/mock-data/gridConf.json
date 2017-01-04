@@ -1,0 +1,46 @@
+{
+    "rows": 10,
+    "paginator": true,
+    "pageLinks": 3,
+    "column": [{
+            "field": "GSID",
+            "header": "公司编码"
+        },
+        {
+            "field": "GSMC",
+            "header": "公司名称"
+        },
+        {
+            "field": "ZCDZ",
+            "header": "注册地址"
+        },
+        {
+            "field": "YZBM",
+            "header": "邮政编码"
+        },
+        {
+            "field": "GSSH",
+            "header": "税号"
+        },
+        {
+            "field": "GSKHYH",
+            "header": "开户银行"
+        },
+        {
+            "field": "GSZH",
+            "header": "账号"
+        },
+        {
+            "field": "LXR",
+            "header": "联系人"
+        },
+        {
+            "field": "SJHM",
+            "header": "手机号码"
+        },
+        {
+            "field": "BZ",
+            "header": "备注"
+        }
+    ]
+}

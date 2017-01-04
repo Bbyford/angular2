@@ -9,10 +9,17 @@ import { DataService } from '../../core'
 })
 export class ToolbarComponent implements OnInit {
     @Input('searchData') searchData: any;
+    @Input() btnSwitch : boolean;
     @Output() Ondata : EventEmitter<any> = new EventEmitter<any>();
+    @Output() Disabled : EventEmitter<any> = new EventEmitter<any>();
     toggle: Boolean = true;
     show: Boolean;
     data: any;
+    URL:string;
+    iDJZT:number;
+    @Input() 
+    get DJZT(){return this.iDJZT};
+    set DJZT(value){this.iDJZT=value};
     constructor(
         private dataService: DataService
     ) { }
@@ -20,12 +27,18 @@ export class ToolbarComponent implements OnInit {
     ngOnInit() {
         this.show = true;
      }
-    add():void{
-        this.toggle = false;
+    add(event: any):void{
+        debugger;
+        console.info(this.DJZT);
+        this.URL="insert" ;   
+    }
+    edit(): void{
+        console.info(this.URL);
+        console.info(this.iDJZT);
+        this.Disabled.emit(false);
     }
     save():void{
         this.toggle = true;
-        
     }
     cancel():void{
         this.toggle = true;
@@ -35,8 +48,12 @@ export class ToolbarComponent implements OnInit {
         this.dataService.RequestPost(this.searchData.data,this.searchData.http).subscribe(res => {
             this.data = res.obj.rows;
             this.Ondata.emit(this.data);
+            this.toggle = false;
         }); 
        
+    }
+    getDJZT(btn:any){
+        this.DJZT[btn.target].iSave;
     }
 
 }

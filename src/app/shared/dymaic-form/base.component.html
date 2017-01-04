@@ -2,7 +2,7 @@
     <div *ngIf="field.controlType == 'text'">
         <label class="flex-box">
             <span class="text-exp" >{{field.controlTitle}}</span>
-            <input [type]="field.controlType" [required]="field.required" [formControlName]="field.controlName" />
+            <input [type]="field.controlType" [required]="field.required" [formControlName]="field.controlName" [readonly]="disabled || !field.disabled" [ngClass]="{'readyOnly':disabled || !field.disabled}"/>
             <span class="fa fa-search search-btn" *ngIf="field.searchBtn"></span>
         </label>
     </div>
@@ -17,7 +17,7 @@
     <div *ngIf="field.controlType == 'checkbox'">
         <div class="flex-box">
             <span class="text-exp">{{field.controlTitle}}</span>
-            <p-checkbox binary="false" style="margin-top:2px" [formControlName]="field.controlName"></p-checkbox>
+            <p-checkbox binary="false" style="margin-top:2px" [formControlName]="field.controlName" [disabled]="disabled"></p-checkbox>
         </div>
     </div>
     <div *ngIf="field.controlType == 'date'">

@@ -3,6 +3,7 @@ import { Headers, Http, Response, URLSearchParams, RequestOptionsArgs, RequestOp
 import { Observable } from 'rxjs/Observable';
 import { Data } from './data.module';
 import { FormDataBase } from './formdata-base';
+import { SearchGridConf } from './searchGridConf';
 
 @Injectable()
 
@@ -17,12 +18,20 @@ export class DataService {
             .map(res => res.json().data)
             .catch(this.handleError);
     }
+    //获取动态表单数据
     getFormData(url: string): Observable<FormDataBase<any>[]> {
-        debugger;
         return this.http.get(url)
             .map(res => res.json().data)
             .catch(this.handleError);
     }
+    //获取查询表格
+    getGridPZData(url: string): Observable<SearchGridConf<any>> {
+        debugger;
+        return this.http.get(url)
+            .map(res => res.json())
+            .catch(this.handleError);
+    }
+
     //得改动服务端  post请求
     PostData(data: any): Observable<any> {
         console.info("ABCD");

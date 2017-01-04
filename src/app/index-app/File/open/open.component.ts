@@ -13,6 +13,7 @@ export class OpenComponent implements OnInit {
     FormDatas : FormDataBase<any>[] = [];
     form: FormGroup;
     lock = false;
+    disabled = true;
     url = "../../mock-data/formData.json";
     constructor(
       private getDataService : DataService,

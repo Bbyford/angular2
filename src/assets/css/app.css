@@ -52,7 +52,6 @@ i {
 
 form {
     display: block;
-    overflow: hidden;
 }
 
 a {
@@ -107,6 +106,10 @@ a {
     margin-top: 4px!important;
 }
 
+.ui-panel-content.ui-widget-content {
+    overflow: hidden;
+}
+
 .ui-accordion .ui-accordion-content {
     overflow: inherit!important;
 }
@@ -127,15 +130,9 @@ a {
     padding: 0.5em !important;
 }
 
-.ui-datatable-odd {
-    background-color: #eee!important;
-}
-
 .ui-datepicker {
     width: auto!important;
 }
-
-
 /*-------content------- */
 
 .content-wrap {
@@ -166,7 +163,9 @@ input[type="password"] {
     flex: 1;
     min-width: 50px;
 }
-
+input[type="text"].readyOnly{
+    background: #ffc;
+}
 .row {
     margin-bottom: 8px;
 }
@@ -208,4 +207,15 @@ label.flex-box .search-btn {
 
 label.flex-box .search-btn:hover {
     cursor: pointer;
+}
+.pos-rlt{
+    position: relative;
+}
+.mask{
+    width: 100%;
+    height:  100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index : 99;
 }

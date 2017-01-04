@@ -4,3 +4,4 @@ export * from './data.module';
 export * from './blockUi.service';
 export * from './toFormGroup.service';
 export * from './formdata-base';
+export * from './searchGridConf'

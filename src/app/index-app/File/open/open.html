@@ -4,7 +4,7 @@
         <div class="row" *ngIf="lock">
             <form [formGroup]="form">
                 <ng-container *ngFor="let FormData of FormDatas">
-                    <form-base [field]="FormData" [form]="form"></form-base>
+                    <form-base [field]="FormData" [form]="form" [disabled]="disabled"></form-base>
                 </ng-container>
                 <div class="ui-g-4 mb8">
                     <label class="flex-box">

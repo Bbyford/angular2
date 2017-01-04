@@ -2,7 +2,7 @@ import './rxjs-extensions';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
-import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+// import { FormsModule} from '@angular/forms';
 
 
 import { ROUTING }  from './app.router';
