@@ -23,7 +23,7 @@ export class OpenComponent implements OnInit {
     getData(): void {
       this.getDataService
           .getFormData(this.url)
-          .subscribe(res => {this.FormDatas = res; console.log(res);
+          .subscribe(res => {this.FormDatas = res["data"]; console.log(res);
           this.FormDatas.push(
               {
                 controlName: "ABC",

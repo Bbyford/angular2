@@ -1,6 +1,7 @@
 <div class="content-wrap">
     <div class="content">
-        <toolbar style="width:100%" [searchData]="searchData" DJZT="10" [btnList]="btnList" (Ondata)="cancelDataEvent($event)" [btnSwitch]="btnSwitch" (Disabled)="FormDisabled($event)"></toolbar>
+        
+        <toolbar style="width:100%" [searchData]="searchData" [btnList]="btnList" (Ondata)="cancelDataEvent($event)" [btnSwitch]="btnSwitch" (Disabled)="FormDisabled($event)" [formValue]="form?form.value:null"></toolbar>
         <div class="row">
             <form #searchForm="ngForm">
                 <div class="ui-g container-wrap">
@@ -25,6 +26,7 @@
                     <ng-container *ngFor="let FormData of FormDatas">
                         <form-base [field]="FormData" [form]="form" [disabled]="disabled"></form-base>
                     </ng-container>
+                    {{form.value | json}}
                 </form>
             </p-panel>
         </div>

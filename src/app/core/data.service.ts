@@ -61,6 +61,7 @@ export class DataService {
     }
     //不用改动服务端  post请求
     public RequestPost(data: any,  url: string): Observable<any> {
+        debugger;
         let queryParameters = new URLSearchParams();
         let headerParams = new Headers();
 
@@ -78,14 +79,14 @@ export class DataService {
         };
         requestOptions.body = formParams.toString();
         console.log(requestOptions.body);
-        return this.http.request(url, requestOptions)
+        return this.http.request(this.dataUrlYYERP + url, requestOptions)
             .map((response: Response) => {
                 if (response.status === 401 || response.status === 403) { window.location.href = '/#/login'; return response.json(); } else if (response.status === 204) {
                     return response.json();
                 } else {
                     if (response.json().meta && response.json().meta.code === 401) { window.location.href = '/#/login'; return response.json(); } return response.json();
                 }
-            });
+            }).catch(this.handleError);
     }
 
     //得在服务端修改 加上@RequestBody

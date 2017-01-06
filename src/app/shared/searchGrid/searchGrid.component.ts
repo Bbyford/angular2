@@ -14,6 +14,9 @@ export class searchGridComponent implements OnInit {
   }
 
   onRowSelect(event) {
+    //this.selected表示当前点击的数据
+      console.log(this.selected);
+    //event.data也表示当前点击的数据
       this.selectedData.emit(event.data);
   }
   onRowUnselect(event) {

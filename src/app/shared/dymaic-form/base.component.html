@@ -1,5 +1,5 @@
-<div [formGroup]="form" [ngClass]="field.ElemClass" class="mb8">
-    <div *ngIf="field.controlType == 'text'">
+<div [formGroup]="form" [ngClass]="field.hidden? '': field.ElemClass" class="mb8">
+    <div *ngIf="field.controlType == 'text'" [hidden]="field.hidden? field.hidden: false">
         <label class="flex-box">
             <span class="text-exp" >{{field.controlTitle}}</span>
             <input [type]="field.controlType" [required]="field.required" [formControlName]="field.controlName" [readonly]="disabled || !field.disabled" [ngClass]="{'readyOnly':disabled || !field.disabled}"/>

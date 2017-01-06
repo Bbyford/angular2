@@ -9,6 +9,7 @@ export class FormDataBase<T>{
   ElemClass: string;
   controlTitle: string;
   searchBtn?: boolean;
+  hidden?: boolean;
 
   constructor(options: {
       value?: T,
@@ -20,7 +21,8 @@ export class FormDataBase<T>{
       order?: number,
       ElemClass?: string,
       controlTitle?: string,
-      searchBtn?: boolean;
+      searchBtn?: boolean,
+      hidden?: boolean
     } = {}) {
     this.value = options.value || null;
     this.Selectoptions = options.Selectoptions;
@@ -32,5 +34,6 @@ export class FormDataBase<T>{
     this.ElemClass = options.ElemClass || '';
     this.controlTitle = options.controlTitle || '';
     this.searchBtn = !!options.searchBtn;
+    this.hidden = !!options.hidden;
   }
 }

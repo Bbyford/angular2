@@ -42,6 +42,16 @@
         },
         {
             "controlType": "text",
+            "controlName": "GJMC",
+            "controlTitle": "*国家名称",
+            "required": true,
+            "disabled": true,
+            "ElemClass": "ui-g-3",
+            "searchBtn": true,
+            "hidden": true
+        },
+        {
+            "controlType": "text",
             "controlName": "SFID",
             "controlTitle": "*省份名称",
             "required": true,
@@ -51,12 +61,32 @@
         },
         {
             "controlType": "text",
+            "controlName": "SFMC",
+            "controlTitle": "*省份名称",
+            "required": true,
+            "disabled": true,
+            "ElemClass": "ui-g-3",
+            "searchBtn": true,
+            "hidden": true
+        },
+        {
+            "controlType": "text",
             "controlName": "CSID",
             "controlTitle": "*城市名称",
             "required": true,
             "disabled": true,
             "ElemClass": "ui-g-3",
             "searchBtn": true
+        },
+        {
+            "controlType": "text",
+            "controlName": "CSMC",
+            "controlTitle": "*城市名称",
+            "required": true,
+            "disabled": true,
+            "ElemClass": "ui-g-3",
+            "searchBtn": true,
+            "hidden": true
         },
         {
             "controlType": "text",
@@ -153,7 +183,16 @@
             "required": false,
             "disabled": true,
             "ElemClass": "ui-g-3"
-        }
+        },
+        {
+            "controlType": "text",
+            "controlName":"TS01",
+            "required": true,
+            "disabled": true,
+            "controlTitle":"时间戳",
+            "hidden":true,
+            "ElemClass": "ui-g-3"
+         }
     ],
     "btnList":[
         {

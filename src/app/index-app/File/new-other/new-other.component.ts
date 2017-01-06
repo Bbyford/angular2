@@ -40,7 +40,7 @@ export class NewOtherComponent implements OnInit {
                 F_BDQXID: "000101"
             }
         },
-        http: "http://localhost:8080/YYERP/base/funcAction/query.action"
+        http: "base/funcAction/query.action"
     }
     selectedGridData: any;
     gridDataConf: any;
@@ -50,13 +50,7 @@ export class NewOtherComponent implements OnInit {
     selectedGirdEvent(event): void{
         debugger;
         this.selectedGridData = event;
-        for(let i = 0; i <this.FormDatas.length; i++){
-            if(this.selectedGridData[this.FormDatas[i]["controlName"]]){
-                this.form.controls[this.FormDatas[i]["controlName"]].setValue(this.selectedGridData[this.FormDatas[i]["controlName"]]);
-            }else{
-                this.form.controls[this.FormDatas[i]["controlName"]].setValue('');
-            }                
-        }
+        this.setFormValue(this.selectedGridData);
         if(!this.disabled){
             this.disabled = true;
         }
@@ -64,9 +58,23 @@ export class NewOtherComponent implements OnInit {
             this.btnSwitch = false;
         }       
     }
-    FormDisabled(event): void{
-        this.disabled = event;
-        this.expression = true;
+
+    setFormValue(Data: any): void{
+        for(let i = 0; i <this.FormDatas.length; i++){
+            if(Data[this.FormDatas[i]["controlName"]]){
+                this.form.controls[this.FormDatas[i]["controlName"]].setValue(Data[this.FormDatas[i]["controlName"]]);
+            }else{
+                this.form.controls[this.FormDatas[i]["controlName"]].setValue('');
+            }                
+        }
+    }
+
+    FormDisabled(event:any): void{
+        this.disabled = event["disabled"];
+        this.expression = !event["disabled"];
+        if(!event["change"]){
+          this.setFormValue(this.selectedGridData);  
+        }
     }
     ngOnInit(): void{
         this.getData();
