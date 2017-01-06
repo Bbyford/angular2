@@ -154,5 +154,55 @@
             "disabled": true,
             "ElemClass": "ui-g-3"
         }
+    ],
+    "btnList":[
+        {
+        "id": "btnAdd",
+        "name": "新增",
+        "isave": "1",
+        "focus": "GSID",
+        "pdjzt": 0,
+        "icon": "fa-plus-square",
+        "url": "insert"
+      },
+      {
+        "id": "btnEdit",
+        "name": "修改",
+        "isave": "2",
+        "focus": "GSJC",
+        "disable": "GSID;GSMC",
+        "pdjzt": 0,
+        "icon": "fa-pencil",
+        "url": "update"
+      },
+      {
+        "id": "btnDel",
+        "isave": "0",
+        "name": "删除",
+        "pdjzt": 0,
+        "icon": "fa-minus",
+        "url": "delete"
+      },
+      {
+        "id": "btnSave",
+        "name": "保存",
+        "isave": "0",
+        "icon": "fa-save (alias)",
+        "pdjzt": 0
+      },
+      {
+        "id": "btnCancel",
+        "name": "取消",
+        "isave": "0",
+        "icon": "fa-close (alias)",
+        "pdjzt": 0
+      },
+      {
+        "id": "btnQry",
+        "name": "查询",
+        "isave": "0",
+        "icon": "fa-search",
+        "pdjzt": 0
+      }
     ]
 }

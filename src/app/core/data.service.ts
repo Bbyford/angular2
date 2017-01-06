@@ -21,7 +21,7 @@ export class DataService {
     //获取动态表单数据
     getFormData(url: string): Observable<FormDataBase<any>[]> {
         return this.http.get(url)
-            .map(res => res.json().data)
+            .map(res => res.json())
             .catch(this.handleError);
     }
     //获取查询表格

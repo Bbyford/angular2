@@ -2,7 +2,8 @@ import { NgModule, SkipSelf, Optional } from '@angular/core';
 import { DataService } from './data.service';
 import { BlockUIService } from './blockUi.service';
 import { HttpModule } from '@angular/http';
-import { FormControlService } from './toFormGroup.service'
+import { FormControlService } from './toFormGroup.service';
+import { DomHandler } from './domhandler';
 @NgModule({
     imports: [
         HttpModule        
@@ -10,6 +11,7 @@ import { FormControlService } from './toFormGroup.service'
     providers: [
         DataService,
         FormControlService,
+        DomHandler,
         BlockUIService
     ]
 })

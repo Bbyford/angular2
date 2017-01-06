@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule }  from '@angular/common';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import {ButtonModule, DropdownModule,CheckboxModule,CalendarModule,DataTableModule} from 'primeng/primeng';
-
+import {  DropdownModule,CheckboxModule,CalendarModule,DataTableModule} from 'primeng/primeng';
+import { ButtonModule } from './button/button';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';

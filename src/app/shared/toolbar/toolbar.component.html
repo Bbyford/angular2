@@ -1,23 +1,26 @@
 <div class="ui-g toolbar">
-    <div class="ui-g-1">
-        <button pButton type="text" (click)="add($event)" icon="fa-plus-square" [disabled]="btnSwitch" label="新增"></button>
+    <div class="ui-g-1" *ngFor="let btnlist of btnList">
+
+        
+        <button *ngIf="btnlist.id != 'btnQry'" yButton type="text" (click)="MyClick(btnlist)" [model]="btnlist" icon="{{btnlist.icon}}" [disabled]="setbtnDisable(btnlist,iSave)" label="{{btnlist.name}}"></button>
+        <button *ngIf="btnlist.id === 'btnQry'" yButton type="text" [model]="btnlist" icon="{{btnlist.icon}}" [disabled]="false || setbtnDisable(btnlist,iSave)" label="{{btnlist.name}}" (click)="search()"></button>
+    </div>
+    <!--<div class="ui-g-1">
+        <button yButton type="text" (click)="edit()" icon="fa-pencil" [disabled]="btnSwitch" label="修改"></button>
     </div>
     <div class="ui-g-1">
-        <button pButton type="text" (click)="edit()" icon="fa-pencil" [disabled]="btnSwitch" label="修改"></button>
+        <button yButton type="text" (click)="del()" icon="fa-minus" [disabled]="btnSwitch" label="删除"></button>
     </div>
     <div class="ui-g-1">
-        <button pButton type="text" (click)="del()" icon="fa-minus" [disabled]="btnSwitch" label="删除"></button>
+        <button yButton type="text" (click)="save()" icon="fa-save (alias)" [disabled]="true" label="保存"></button>
     </div>
     <div class="ui-g-1">
-        <button pButton type="text" (click)="save()" icon="fa-save (alias)" [disabled]="true" label="保存"></button>
+        <button yButton type="text" (click)="cancel()" icon="fa-close (alias)" [disabled]="true" label="取消"></button>
     </div>
     <div class="ui-g-1">
-        <button pButton type="text" (click)="cancel()" icon="fa-close (alias)" [disabled]="true" label="取消"></button>
-    </div>
-    <div class="ui-g-1">
-        <button pButton type="text" (click)="search()" icon="fa-search" [disabled]="!toggle" label="查询"></button>
+        <button yButton type="text" (click)="search()" icon="fa-search" [disabled]="!toggle" label="查询"></button>
     </div>
     <div class="ui-g-1" *ngIf="!show">
-        <button pButton type="text" (click)="export()" icon="fa-copy (alias)" [disabled]="!toggle" label="导出"></button>
-    </div>
+        <button yButton type="text" (click)="export()" icon="fa-copy (alias)" [disabled]="!toggle" label="导出"></button>
+    </div>-->
 </div>

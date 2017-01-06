@@ -15,6 +15,7 @@ export class NewOtherComponent implements OnInit {
       private router : Router
     ) { }
     FormDatas : FormDataBase<any>[] = [];
+    btnList: any[];
     form: FormGroup;
     lock = false;
     lock2 = false;
@@ -74,7 +75,7 @@ export class NewOtherComponent implements OnInit {
     getData(): void {
       this.getDataService
           .getFormData(this.url)
-          .subscribe(res => {this.FormDatas = res; console.log(res);     
+          .subscribe(res => {this.FormDatas = res["data"]; this.btnList = res["btnList"]; console.log(res);     
           this.form = this.getFormControlService.toFormGroup(this.FormDatas);
           this.lock = true; });
     }
