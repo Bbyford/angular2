@@ -24,6 +24,8 @@ import { SearchTextComponent }    from './Help/search-text/search-text.component
 import { SidebarComponent}  from './aside/sidebar';
 import { IndexAppComponent } from './index-app.component';
 
+import { DataConfigService } from '../core/data-config.service';
+
 @NgModule({
   declarations: [
     HomeComponent,
@@ -53,6 +55,6 @@ import { IndexAppComponent } from './index-app.component';
     DataTableModule,
     ROUTING
   ],
-  providers: []
+  providers: [DataConfigService]
 })
 export class IndexAppModule { }

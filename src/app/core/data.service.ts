@@ -34,7 +34,6 @@ export class DataService {
 
     //得改动服务端  post请求
     PostData(data: any): Observable<any> {
-        console.info("ABCD");
         let headers: Headers = new Headers({ 'Content-Type': 'application/json' });
         return this.http.post("http://localhost:8080/YYERP/aut/czyAction/mylogin.action", data, { headers: headers })
             .map(res => res.json())
@@ -71,14 +70,12 @@ export class DataService {
         for(var key in data){
             formParams.append(key, JSON.stringify(data[key]));
         }
-        console.info(formParams);   
         let requestOptions: RequestOptionsArgs = {
             method: 'POST',
             headers: headerParams,
             search: queryParameters
         };
         requestOptions.body = formParams.toString();
-        console.log(requestOptions.body);
         return this.http.request(this.dataUrlYYERP + url, requestOptions)
             .map((response: Response) => {
                 if (response.status === 401 || response.status === 403) { window.location.href = '/#/login'; return response.json(); } else if (response.status === 204) {
@@ -92,7 +89,6 @@ export class DataService {
     //得在服务端修改 加上@RequestBody
     public ExecutePost(data:any) {
         let _body = JSON.stringify(data);
-        console.log(_body);
         let headers = new Headers();
         headers.set('Content-Type', 'application/json;charset=utf-8');
 

@@ -4,7 +4,7 @@ export class FormDataBase<T>{
   controlType?: string;
   controlName: string;
   required: boolean;
-  disabled?: boolean;
+  readyOnly?: boolean;
   order?: number;
   ElemClass: string;
   controlTitle: string;
@@ -17,7 +17,7 @@ export class FormDataBase<T>{
       controlType?: string,
       controlName?: string,
       required?: boolean,
-      disabled?: boolean,
+      readyOnly?: boolean,
       order?: number,
       ElemClass?: string,
       controlTitle?: string,
@@ -29,7 +29,7 @@ export class FormDataBase<T>{
     this.controlType = options.controlType || '';
     this.controlName = options.controlName || '';
     this.required = !!options.required;
-    this.disabled = !!options.disabled;
+    this.readyOnly = !!options.readyOnly;
     this.order = options.order === undefined ? 1 : options.order;
     this.ElemClass = options.ElemClass || '';
     this.controlTitle = options.controlTitle || '';

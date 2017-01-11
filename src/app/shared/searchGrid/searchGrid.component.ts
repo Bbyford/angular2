@@ -8,8 +8,8 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 export class searchGridComponent implements OnInit {
   @Input() gridDataConf: any;
   @Input() gridSearchData: any;
+  @Input() selected: any;
   @Output() selectedData : EventEmitter<any> = new EventEmitter<any>();
-  public selected: any;
   ngOnInit() {
   }
 
@@ -17,7 +17,7 @@ export class searchGridComponent implements OnInit {
     //this.selected表示当前点击的数据
       console.log(this.selected);
     //event.data也表示当前点击的数据
-      this.selectedData.emit(event.data);
+      this.selectedData.emit(this.selected);
   }
   onRowUnselect(event) {
 

@@ -1,6 +1,5 @@
-<form>
 <p-dataTable  [editable]="true"  [value]="gridSearchData" [rows]="gridDataConf.rows? gridDataConf.rows : 10" [paginator]="gridDataConf.paginator? gridDataConf.paginator : true" [pageLinks]="gridDataConf.pageLinks? gridDataConf.pageLinks: 3" [rowsPerPageOptions]="[5,10,20]"
-    [emptyMessage]="''" selectionMode="{{gridDataConf.selectionMode? gridDataConf.selectionMode : 'single'}}" [(selection)]="selected" (onRowSelect)="onRowSelect($event)" (onRowUnselect)="onRowUnselect($event)">
+    [emptyMessage]="''" selectionMode="{{gridDataConf.selectionMode? gridDataConf.selectionMode : 'single'}}" [(selection)]="selected" (onRowSelect)="onRowSelect($event)" (onRowUnselect)="onRowUnselect($event)" name="acb">
     <!--<p-column field="GSID" header="公司编码"></p-column>
     <p-column field="GSMC" header="公司名称"></p-column>
     <p-column field="ZCDZ" header="注册地址"></p-column>
@@ -14,7 +13,5 @@
     <p-column field="BZ" header="备注"></p-column>-->
     <ng-container *ngFor="let column of gridDataConf.column">
         <p-column field="{{column.field}}" header="{{column.header}}"  [editable]="true"></p-column>
-    </ng-container>
-    
+    </ng-container>   
 </p-dataTable>
-</form>

@@ -1,9 +1,6 @@
 <div class="ui-g toolbar">
-    <div class="ui-g-1" *ngFor="let btnlist of btnList">
-
-        
-        <button *ngIf="btnlist.id != 'btnQry'" yButton type="text" (click)="MyClick(btnlist)" [model]="btnlist" icon="{{btnlist.icon}}" [disabled]="setbtnDisable(btnlist,iSave)" label="{{btnlist.name}}"></button>
-        <button *ngIf="btnlist.id === 'btnQry'" yButton type="text" [model]="btnlist" icon="{{btnlist.icon}}" [disabled]="false || setbtnDisable(btnlist,iSave)" label="{{btnlist.name}}" (click)="search()"></button>
+    <div class="ui-g-1" *ngFor="let btnlist of btnList">       
+        <button yButton type="text" (click)="MyClick(btnlist)" [model]="btnlist" icon="{{btnlist.icon}}" [disabled]="setbtnDisable(btnlist,iSave)" label="{{btnlist.name}}" ></button>
     </div>
     <!--<div class="ui-g-1">
         <button yButton type="text" (click)="edit()" icon="fa-pencil" [disabled]="btnSwitch" label="修改"></button>

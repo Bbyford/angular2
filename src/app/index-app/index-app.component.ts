@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, AfterContentChecked, AfterViewChecked, AfterViewInit, OnChanges} from '@angular/core';
 import { Router }  from '@angular/router';
 import { BlockUIService } from '../core';
 import 'rxjs/Rx';
@@ -9,25 +9,35 @@ import 'rxjs/Rx';
   styleUrls: ['./index-app.css'],
   providers: [BlockUIService]
 })
-export class IndexAppComponent implements OnInit {
-  public blockUI: Boolean;
+export class IndexAppComponent implements OnInit , AfterContentChecked, AfterViewChecked, AfterViewInit, OnChanges{
+
+  public blockUI: Boolean = true;
   constructor(
     private router:Router,
     private blockUIService: BlockUIService,
     ) {
 
   }
-  ngOnInit(): void{
+  ngOnInit(): void{  
       this.blockUIService.blockUIEvent.subscribe(event => this.blockUnBlockUI(event));
-      this.blockUIService.blockUIEvent.emit({
-        value: false
-      });
+      this.blockUIService.stopBlock();
       document.title = "首页";
       // if(!sessionStorage.getItem('user')){
       //     this.router.navigate(["login"]);
       // }
   }
+  ngAfterContentChecked(){
+
+  }
+  ngAfterViewChecked() { 
+
+  }
+  ngAfterViewInit() {
+
+  }
+  ngOnChanges(changeRecord) { 
+  }
   private blockUnBlockUI(event) {
-      this.blockUI = event.value;
+      this.blockUI = event;
   }
 }

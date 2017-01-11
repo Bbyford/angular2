@@ -8,7 +8,7 @@ import { FormDataBase } from '../../core';
 })
 export class FormBaseComponent {
   @Input() field: FormDataBase<any>;
-  @Input() disabled: boolean;
+  @Input() readyOnly: boolean;
   @Input() form: FormGroup;
   model: any;
 }

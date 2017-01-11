@@ -62,7 +62,6 @@ export class Button implements AfterViewInit, OnDestroy {
     
     @HostListener('mousedown', ['$event']) 
     onMouseDown(e: Event) {
-        console.log(this.model);
         this.active = true;
     }
     

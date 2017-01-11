@@ -27,6 +27,7 @@ import { CoreModule } from './core';
     LoginAppModule,
     ROUTING
   ],
+  providers:[],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

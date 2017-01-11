@@ -3,6 +3,7 @@ import { Router }  from '@angular/router';
 import { Data }    from '../../core';
 import { Tabs }  from './tabs';
 import { DataService  }  from '../../core';
+import { DataConfigService } from '../../core/data-config.service';
 
 @Component({
   moduleId: "module.id",
@@ -19,7 +20,8 @@ export class SiderNavComponent implements OnInit {
   url = "../../mock-data/data.json";
   constructor(
       private getDataService : DataService,
-      private router : Router
+      private router : Router,
+      private dataConfigService:DataConfigService
     ) { }
   getData(): void {
       this.getDataService
@@ -88,6 +90,7 @@ export class SiderNavComponent implements OnInit {
     this.active = "home";
   }
   closeTab(two:string){
+    debugger;
       event.stopPropagation();
       let len = this.tabs.length;
       for(let i = 0; i < len; i++){
@@ -111,7 +114,7 @@ export class SiderNavComponent implements OnInit {
                   this.router.navigate(['index/' + this.tabs[i - 1].one + '/'+ this.tabs[i - 1].two]);
                   this.active = this.tabs[i - 1].two;
                   console.info(this.active);
-              }
+                }
               }
             }
             
@@ -120,6 +123,7 @@ export class SiderNavComponent implements OnInit {
           sessionStorage.setItem('tabs',JSON.stringify(this.tabs));
         }
       }
+      this.dataConfigService.deleteCDNMData("defGSXX");
   }
 
 

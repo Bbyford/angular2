@@ -142,6 +142,15 @@ a {
 .content {
     padding-left: 25px;
     padding-right: 120px;
+    padding-top: 40px;
+}
+
+.toolbar-fix{
+    width: 100%;
+    position: fixed;
+    top: 140px;
+    z-index: 99999;
+    background: #fff;
 }
 
 button {

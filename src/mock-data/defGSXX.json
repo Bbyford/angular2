@@ -4,7 +4,7 @@
             "controlName": "GSID",
             "controlTitle": "*公司编码",
             "required": true,
-            "disabled": true,
+            "readyOnly": true,
             "ElemClass": "ui-g-3"
         },
         {
@@ -12,7 +12,7 @@
             "controlName": "GSMC",
             "controlTitle": "*公司名称",
             "required": true,
-            "disabled": true,
+            "readyOnly": true,
             "ElemClass": "ui-g-6"
         },
         {
@@ -20,7 +20,7 @@
             "controlName": "GSJC",
             "controlTitle": "*公司简称",
             "required": true,
-            "disabled": true,
+            "readyOnly": true,
             "ElemClass": "ui-g-3"
         },
         {
@@ -28,7 +28,7 @@
             "controlName": "GSYWMC",
             "controlTitle": "公司英文名称",
             "required": false,
-            "disabled": true,
+            "readyOnly": true,
             "ElemClass": "ui-g-3"
         },
         {
@@ -36,7 +36,7 @@
             "controlName": "GJID",
             "controlTitle": "*国家名称",
             "required": true,
-            "disabled": true,
+            "readyOnly": true,
             "ElemClass": "ui-g-3",
             "searchBtn": true
         },
@@ -45,7 +45,7 @@
             "controlName": "GJMC",
             "controlTitle": "*国家名称",
             "required": true,
-            "disabled": true,
+            "readyOnly": true,
             "ElemClass": "ui-g-3",
             "searchBtn": true,
             "hidden": true
@@ -55,7 +55,7 @@
             "controlName": "SFID",
             "controlTitle": "*省份名称",
             "required": true,
-            "disabled": true,
+            "readyOnly": true,
             "ElemClass": "ui-g-3",
             "searchBtn": true
         },
@@ -64,7 +64,7 @@
             "controlName": "SFMC",
             "controlTitle": "*省份名称",
             "required": true,
-            "disabled": true,
+            "readyOnly": true,
             "ElemClass": "ui-g-3",
             "searchBtn": true,
             "hidden": true
@@ -74,7 +74,7 @@
             "controlName": "CSID",
             "controlTitle": "*城市名称",
             "required": true,
-            "disabled": true,
+            "readyOnly": true,
             "ElemClass": "ui-g-3",
             "searchBtn": true
         },
@@ -83,7 +83,7 @@
             "controlName": "CSMC",
             "controlTitle": "*城市名称",
             "required": true,
-            "disabled": true,
+            "readyOnly": true,
             "ElemClass": "ui-g-3",
             "searchBtn": true,
             "hidden": true
@@ -93,7 +93,7 @@
             "controlName": "ZCDZ",
             "controlTitle": "*注册地址",
             "required": true,
-            "disabled": true,
+            "readyOnly": true,
             "ElemClass": "ui-g-6"
         },
         {
@@ -101,7 +101,7 @@
             "controlName": "YZBM",
             "controlTitle": "邮政编码",
             "required": false,
-            "disabled": true,
+            "readyOnly": true,
             "ElemClass": "ui-g-3"
         },
         {
@@ -109,7 +109,7 @@
             "controlName": "GSSH",
             "controlTitle": "*公司税号",
             "required": true,
-            "disabled": true,
+            "readyOnly": true,
             "ElemClass": "ui-g-3"
         },
         {
@@ -117,7 +117,7 @@
             "controlName": "GSKHYH",
             "controlTitle": "*公司开户银行",
             "required": true,
-            "disabled": true,
+            "readyOnly": true,
             "ElemClass": "ui-g-3"
         },
         {
@@ -125,7 +125,7 @@
             "controlName": "GSZH",
             "controlTitle": "*公司账号",
             "required": true,
-            "disabled": true,
+            "readyOnly": true,
             "ElemClass": "ui-g-3"
         },
         {
@@ -133,7 +133,7 @@
             "controlName": "LXR",
             "controlTitle": "*联系人",
             "required": true,
-            "disabled": true,
+            "readyOnly": true,
             "ElemClass": "ui-g-3"
         },
         {
@@ -141,7 +141,7 @@
             "controlName": "LXDH",
             "controlTitle": "*联系电话",
             "required": true,
-            "disabled": true,
+            "readyOnly": true,
             "ElemClass": "ui-g-3"
         },
         {
@@ -149,7 +149,7 @@
             "controlName": "SJHM",
             "controlTitle": "*手机号码",
             "required": true,
-            "disabled": true,
+            "readyOnly": true,
             "ElemClass": "ui-g-3"
         },
         {
@@ -157,7 +157,7 @@
             "controlName": "BZ",
             "controlTitle": "备注",
             "required": false,
-            "disabled": true,
+            "readyOnly": true,
             "ElemClass": "ui-g-3"
         },
         {
@@ -165,7 +165,7 @@
             "controlName": "YXBJ",
             "controlTitle": "*有效标记",
             "required": true,
-            "disabled": true,
+            "readyOnly": true,
             "ElemClass": "ui-g-3"
         },
         {
@@ -173,7 +173,7 @@
             "controlName": "KHID",
             "controlTitle": "客户编码",
             "required": false,
-            "disabled": true,
+            "readyOnly": true,
             "ElemClass": "ui-g-3"
         },
         {
@@ -181,14 +181,14 @@
             "controlName": "GYSID",
             "controlTitle": "供应商编码",
             "required": false,
-            "disabled": true,
+            "readyOnly": true,
             "ElemClass": "ui-g-3"
         },
         {
             "controlType": "text",
             "controlName":"TS01",
             "required": true,
-            "disabled": true,
+            "readyOnly": true,
             "controlTitle":"时间戳",
             "hidden":true,
             "ElemClass": "ui-g-3"

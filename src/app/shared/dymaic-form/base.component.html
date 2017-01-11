@@ -2,7 +2,7 @@
     <div *ngIf="field.controlType == 'text'" [hidden]="field.hidden? field.hidden: false">
         <label class="flex-box">
             <span class="text-exp" >{{field.controlTitle}}</span>
-            <input [type]="field.controlType" [required]="field.required" [formControlName]="field.controlName" [readonly]="disabled || !field.disabled" [ngClass]="{'readyOnly':disabled || !field.disabled}"/>
+            <input [type]="field.controlType" [required]="field.required" [formControlName]="field.controlName" [readonly]="readyOnly || !field.readyOnly" [ngClass]="{'readyOnly':readyOnly || !field.readyOnly}"/>
             <span class="fa fa-search search-btn" *ngIf="field.searchBtn"></span>
         </label>
     </div>
@@ -17,7 +17,7 @@
     <div *ngIf="field.controlType == 'checkbox'">
         <div class="flex-box">
             <span class="text-exp">{{field.controlTitle}}</span>
-            <p-checkbox binary="false" style="margin-top:2px" [formControlName]="field.controlName" [disabled]="disabled"></p-checkbox>
+            <p-checkbox binary="false" style="margin-top:2px" [formControlName]="field.controlName" [disabled]="readyOnly"></p-checkbox>
         </div>
     </div>
     <div *ngIf="field.controlType == 'date'">

@@ -1,7 +1,7 @@
 <div class="content-wrap">
     <div class="content">
         
-        <toolbar style="width:100%" [searchData]="searchData" [btnList]="btnList" (Ondata)="cancelDataEvent($event)" [btnSwitch]="btnSwitch" (Disabled)="FormDisabled($event)" [formValue]="form?form.value:null"></toolbar>
+        <toolbar class="toolbar-fix" [searchData]="searchData" [btnList]="btnList" (Ondata)="cancelDataEvent($event)" [btnSwitch]="btnSwitch" (Disabled)="FormDisabled($event)" [formValue]="form?form.value:null" [form]="form" [iSave]="iSave"></toolbar>
         <div class="row">
             <form #searchForm="ngForm">
                 <div class="ui-g container-wrap">
@@ -24,7 +24,7 @@
             <p-panel header="编辑公司信息" [toggleable]="true">
                 <form [formGroup]="form" *ngIf="lock">
                     <ng-container *ngFor="let FormData of FormDatas">
-                        <form-base [field]="FormData" [form]="form" [disabled]="disabled"></form-base>
+                        <form-base [field]="FormData" [form]="form" [readyOnly]="readyOnly"></form-base>
                     </ng-container>
                     {{form.value | json}}
                 </form>
@@ -33,8 +33,9 @@
         <div class="row pos-rlt">
             <p-panel header="查询结果" [toggleable]="true">
                 <ng-container *ngIf="lock2">
-                    <search-grid [gridDataConf]="gridDataConf" [gridSearchData]="gridSearchData" (selectedData)="selectedGirdEvent($event)"></search-grid>
+                    <search-grid [gridDataConf]="gridDataConf" [gridSearchData]="gridSearchData" (selectedData)="selectedGirdEvent($event)" [selected]="selected"></search-grid>
                 </ng-container>
+                
             </p-panel>
             <div class="mask" *ngIf="expression"></div>
         </div>

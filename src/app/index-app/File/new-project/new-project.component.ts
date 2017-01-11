@@ -30,6 +30,7 @@ export class NewProjectComponent implements OnInit {
         this.ckbj.push({label:'中心仓',value:{name:'中心仓'}});
         this.ckbj.push({label:'区域中心仓',value:{name:'区域中心仓'}});
         this.ckbj.push({label:'门店仓库',value:{name:'门店仓库'}});
+
     }
     private blockUnBlockUI(event) {
       this.blockUI = event.value;
