@@ -6,7 +6,6 @@ import { DataService  }  from '../../core';
 import { DataConfigService } from '../../core/data-config.service';
 
 @Component({
-  moduleId: "module.id",
   selector: 'app-sider-nav',
   templateUrl: './sider-nav.component.html',
   styleUrls: ['./sider-nav.component.css']
@@ -79,6 +78,7 @@ export class SiderNavComponent implements OnInit {
      this.active = two;
   }
   tabTo(one:string,two:string){
+    debugger;
       this.active = two;
       if(two === "home"){
         this.router.navigate([one+'/'+two]);
@@ -91,7 +91,7 @@ export class SiderNavComponent implements OnInit {
   }
   closeTab(two:string){
     debugger;
-      event.stopPropagation();
+     // event.stopPropagation();
       let len = this.tabs.length;
       for(let i = 0; i < len; i++){
         if(this.tabs.length < len){

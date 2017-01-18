@@ -2,13 +2,14 @@ import { NgModule } from '@angular/core';
 import { CommonModule }  from '@angular/common';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import {  DropdownModule,CheckboxModule,CalendarModule,DataTableModule} from 'primeng/primeng';
+import {  DropdownModule,CheckboxModule,CalendarModule,DataTableModule,GrowlModule,DialogModule} from 'primeng/primeng';
 import { ButtonModule } from './button/button';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { FormBaseComponent } from './dymaic-form/base.component';
 import { searchGridComponent } from './searchGrid/searchGrid.component';
+import { MyDialogComponent } from './mydialog/mydialog.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { searchGridComponent } from './searchGrid/searchGrid.component';
     FooterComponent,
     ToolbarComponent,
     FormBaseComponent,
-    searchGridComponent    
+    searchGridComponent,
+    MyDialogComponent   
   ],
   imports: [
     CommonModule,
@@ -27,7 +29,9 @@ import { searchGridComponent } from './searchGrid/searchGrid.component';
     DropdownModule,
     CheckboxModule,
     CalendarModule,
-    DataTableModule
+    DataTableModule,
+    GrowlModule,
+    DialogModule
   ],
   providers: [],
   exports: [
@@ -38,7 +42,10 @@ import { searchGridComponent } from './searchGrid/searchGrid.component';
     FooterComponent,
     ToolbarComponent,
     FormBaseComponent,
-    searchGridComponent
+    searchGridComponent,
+    MyDialogComponent,
+    GrowlModule,
+    DialogModule
   ]
 })
 export class ShareModule { }

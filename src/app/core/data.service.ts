@@ -60,7 +60,6 @@ export class DataService {
     }
     //不用改动服务端  post请求
     public RequestPost(data: any,  url: string): Observable<any> {
-        debugger;
         let queryParameters = new URLSearchParams();
         let headerParams = new Headers();
 

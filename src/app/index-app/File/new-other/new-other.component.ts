@@ -1,18 +1,21 @@
-import  { Component, OnInit, Output, OnDestroy, AfterViewInit,ViewChild} from '@angular/core';
+import  { Component, OnInit, Output, OnDestroy, AfterViewInit,ViewChild,OnChanges,SimpleChanges} from '@angular/core';
 import { FormBuilder,FormGroup, FormControl } from '@angular/forms';
 import { Router }  from '@angular/router';
 import { DataService, FormControlService, FormDataBase  }  from '../../../core';
 import {DataConfigService} from '../../../core/data-config.service';
 import {ToolbarComponent  } from '../../../shared/toolbar/toolbar.component';
+import { MyDialogComponent } from '../../../shared/mydialog/mydialog.component';
 
 @Component({
     selector: 'new-other',
     templateUrl: './new-other.html'
 })
 
-export class NewOtherComponent implements OnInit, OnDestroy, AfterViewInit {
+export class NewOtherComponent implements OnInit, OnDestroy, AfterViewInit, OnChanges {
     @ViewChild(ToolbarComponent)
     private toobalComponent: ToolbarComponent;
+    @ViewChild(MyDialogComponent)
+    private mydialog: MyDialogComponent;
     constructor(
       private dataConfigService:DataConfigService,
       private getDataService : DataService,
@@ -39,13 +42,15 @@ export class NewOtherComponent implements OnInit, OnDestroy, AfterViewInit {
             this.getData();
             this.getGridConf(); 
         }
+       
+
     }
     FormDatas : FormDataBase<any>[] = [];
     btnList: any[];
     form: FormGroup;
     lock = false;
     lock2 = false;
-    readyOnly = false;
+    readyOnly = true;
     btnSwitch: boolean = true;
     expression: boolean = false;
     url ="../../mock-data/defGSXX.json";
@@ -71,12 +76,12 @@ export class NewOtherComponent implements OnInit, OnDestroy, AfterViewInit {
     selected: any;
     gridDataConf: any;
     iSave: number = 0;
+    display: boolean = false;
     
     cancelDataEvent(event):void{
         this.gridSearchData = event;
     }
     selectedGirdEvent(event): void{
-        debugger;
         this.selectedGridData = event;
         this.selected = event;
         this.setFormValue(this.selectedGridData);
@@ -113,36 +118,50 @@ export class NewOtherComponent implements OnInit, OnDestroy, AfterViewInit {
             this.readyOnly = true; 
           }           
         }
-        if(event.disable){
-            let disableField = event.disable.split(";");
-            for(let i = 0; i < disableField.length; i++){
-                for(let j = 0; j < this.FormDatas.length; j++){
-                    if(this.FormDatas[j]['controlName'] == disableField[i]){
-                        this.FormDatas[j]['disabled'] = false;
+        if(event.disabled){
+            debugger;
+            let disableField = event.disabled.split(";");
+            for(let i = 0; i < this.FormDatas.length; i++){
+                for(let j = 0; j < disableField.length; j++){
+                    if(this.FormDatas[i]['controlName'] == disableField[j]){
+                        this.FormDatas[i]['readyOnly'] = true;
                     }
                 }
             }
         }
         
     }
+    DialogDisplay(event:boolean){
+        this.mydialog.display = true;
+    }
     ngOnInit(): void{
-        
+        console.log(this.form);
             
     }
     ngAfterViewInit (){
-        console.log(this.toobalComponent)  
+        console.log(this.form);
     }
     ngOnDestroy() {
-        debugger;
         this.iSave = this.toobalComponent.iSave;
         this.dataConfigService.setCDNMData("defGSXX",{gridDataConf:this.gridDataConf,form: this.form,gridSearchData:this.gridSearchData,formValue: this.form['value'],FormDatas:this.FormDatas,btnList:this.btnList,readyOnly:this.readyOnly,expression:this.expression,selectedGridData:this.selectedGridData,selected:this.selected,iSave:this.iSave,btnSwitch:this.btnSwitch})
+    }
+    ngOnChanges(changes: SimpleChanges) {
+        debugger;
+    // changes.prop contains the old and the new value...
     }
     getData(): void {
       this.getDataService
           .getFormData(this.url)
           .subscribe(res => {this.FormDatas = res["data"]; this.btnList = res["btnList"];     
           this.form = this.getFormControlService.toFormGroup(this.FormDatas);
-          this.lock = true; });
+          this.lock = true; 
+        let gsid = this.form.controls["BZ"];
+        gsid.valueChanges.subscribe(
+        (value: string) => {
+        console.log('sku changed to:', value);
+            }
+        );  
+    });
     }
     getGridConf(): void {
        this.getDataService

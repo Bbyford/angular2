@@ -99,12 +99,15 @@
   width: 20px;
   height: 24px;
   -webkit-mask-size: 100%;
+  -moz-mask-size: 100%;
 }
 .chrome-tabs .chrome-tab .chrome-tab-curves-left, .chrome-tabs .chrome-tab .chrome-tab-curves-left-highlight, .chrome-tabs .chrome-tab .chrome-tab-curves-left-shadow {
   -webkit-mask-image: url("../svg/tab-left.svg");
+  -moz-mask-image: url("../svg/tab-left.svg");
 }
 .chrome-tabs .chrome-tab .chrome-tab-curves-right, .chrome-tabs .chrome-tab .chrome-tab-curves-right-highlight, .chrome-tabs .chrome-tab .chrome-tab-curves-right-shadow {
   -webkit-mask-image: url("../svg/tab-right.svg");
+  -moz-mask-image: url("../svg/tab-right.svg");
 }
 .chrome-tabs .chrome-tab .chrome-tab-curves-left, .chrome-tabs .chrome-tab .chrome-tab-curves-right {
   top: 1px;

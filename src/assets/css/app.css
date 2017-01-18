@@ -70,8 +70,10 @@ a {
 
 .ng-invalid:not(div):not(p-calendar):not(p-checkbox):not(form) {
     border-left: 3px solid #a94442!important;
-    /* red */
 }
+
+input[required]:invalid, input:focus:invalid, textarea[required]:invalid, textarea:focus:invalid{box-shadow: none;}
+
 
 
 /*------ui-g reset------------*/
@@ -133,6 +135,15 @@ a {
 .ui-datepicker {
     width: auto!important;
 }
+
+tr.ui-state-default{
+    height: 24px;
+}
+.ui-growl{
+    top: initial!important;
+    bottom: 30px;
+}
+
 /*-------content------- */
 
 .content-wrap {
@@ -149,7 +160,7 @@ a {
     width: 100%;
     position: fixed;
     top: 140px;
-    z-index: 99999;
+    z-index: 88;
     background: #fff;
 }
 

@@ -2,7 +2,7 @@
     <div *ngIf="field.controlType == 'text'" [hidden]="field.hidden? field.hidden: false">
         <label class="flex-box">
             <span class="text-exp" >{{field.controlTitle}}</span>
-            <input [type]="field.controlType" [required]="field.required" [formControlName]="field.controlName" [readonly]="readyOnly || !field.readyOnly" [ngClass]="{'readyOnly':readyOnly || !field.readyOnly}"/>
+            <input [type]="field.controlType" [required]="field.required" [formControlName]="field.controlName" [readonly]="readyOnly || field.readyOnly" [ngClass]="{'readyOnly':readyOnly || field.readyOnly}"/>
             <span class="fa fa-search search-btn" *ngIf="field.searchBtn"></span>
         </label>
     </div>

@@ -16,7 +16,7 @@ export class ToolbarComponent implements OnInit {
     @Input() iSave: number;
     @Output() Ondata : EventEmitter<any> = new EventEmitter<any>();  //把查询到的数据传递给父组件
     @Output() Disabled : EventEmitter<any> = new EventEmitter<any>(); //把表单是否能编辑状态和grid传递给父组件， true时为不可编辑，
-
+    @Output() display : EventEmitter<any> = new EventEmitter<any>();
     // @Input() btnInitModule:any;/*初始化时按钮携带参数值*/
     // @Input()btnCurrModule: any;/*点击按钮后改变值*/
 
@@ -24,6 +24,7 @@ export class ToolbarComponent implements OnInit {
     postData:any={}; //传送到后台的数据，把数据赋给 pdata
     URL:string;
     iDJZT:number;
+    msgs: any[] = [];
     @Input() 
     get DJZT(){return this.iDJZT};
     set DJZT(value){this.iDJZT=value};
@@ -63,11 +64,8 @@ export class ToolbarComponent implements OnInit {
     //按钮点击事件、
     //btn表示点击事件上的数据
     MyClick(btn:any){
-
-        //把按钮上的isave赋给组件中的iSave
-        this.iSave = btn.isave;
+debugger;
         if(btn.id === "btnAdd"){
-            console.log(this.form);
             this.URL = btn.url;
             for(var key in this.form["controls"]){
                 this.form["controls"][key].setValue('');
@@ -88,33 +86,49 @@ export class ToolbarComponent implements OnInit {
                 for(var key in this.form["controls"]){
                     this.form["controls"][key].setValue('');
                 }
-                this.Disabled.emit({readyOnly:false,expression: false});
+                this.Disabled.emit({readyOnly:true,expression: false});
             }
+            
             this.URL = null;
             
         }else if(btn.id === "btnSave"){
             //当点击的按钮为保存时触发
             //把当前状态值和数据发送到后台
+            //把按钮上的isave赋给组件中的iSave
+            if(!this.form.vaild){
+                //提示信息  组件p-growl
+                this.msgs = [];
+                this.msgs.push({severity:'info', summary:'', detail:"数据输入有误，请检查！"});
+                return false;
+            }
+            console.log(this.form);
             this.postData['pdata'] = this.formValue;
             this.postData['pdata']["CZY"] = "雷春花";
             let url = "mdm/finance/gsxxAction/";  //保存地址后期已经由父组件传递进来
             url = url + this.URL + ".action";
             this.dataService.RequestPost(this.postData,url).subscribe(res => {
-            this.data = res; // res为获得的数据
-            console.log(this.data);
-            if(this.data.success===true){
-                  console.info("提交成功");
-                   //成功时把grid和表单状态返回给父组件
-                  if(this.URL == 'update'){
-                      this.search();
-                  }
-            }else{
-                alert("用户名或密码错误")
-            }
-        });
+                this.data = res; // res为获得的数据
+                console.log(this.data);
+                if(this.data.success===true){
+                    //成功时把grid和表单状态返回给父组件
+                    if(this.URL == 'update'){
+                        this.search();
+                    }
+                    //提示信息  组件p-growl
+                    this.msgs = [];
+                    this.msgs.push({severity:'success', summary:'', detail:this.data["msg"]});
+                }else{
+                    this.msgs = [];
+                    this.msgs.push({severity:'error', summary:'', detail:this.data["msg"]});
+                    this.iSave = 1;
+                }
+            });
         }else if(btn.id === "btnQry"){
             this.search();
+        }else if(btn.id === "btnDel"){
+            this.display.emit(true);
         }
+        this.iSave = btn.isave;
     }
 
    setbtnDisable(btn:any,iSave:number):boolean{

@@ -2,22 +2,5 @@
     <div class="ui-g-1" *ngFor="let btnlist of btnList">       
         <button yButton type="text" (click)="MyClick(btnlist)" [model]="btnlist" icon="{{btnlist.icon}}" [disabled]="setbtnDisable(btnlist,iSave)" label="{{btnlist.name}}" ></button>
     </div>
-    <!--<div class="ui-g-1">
-        <button yButton type="text" (click)="edit()" icon="fa-pencil" [disabled]="btnSwitch" label="修改"></button>
-    </div>
-    <div class="ui-g-1">
-        <button yButton type="text" (click)="del()" icon="fa-minus" [disabled]="btnSwitch" label="删除"></button>
-    </div>
-    <div class="ui-g-1">
-        <button yButton type="text" (click)="save()" icon="fa-save (alias)" [disabled]="true" label="保存"></button>
-    </div>
-    <div class="ui-g-1">
-        <button yButton type="text" (click)="cancel()" icon="fa-close (alias)" [disabled]="true" label="取消"></button>
-    </div>
-    <div class="ui-g-1">
-        <button yButton type="text" (click)="search()" icon="fa-search" [disabled]="!toggle" label="查询"></button>
-    </div>
-    <div class="ui-g-1" *ngIf="!show">
-        <button yButton type="text" (click)="export()" icon="fa-copy (alias)" [disabled]="!toggle" label="导出"></button>
-    </div>-->
 </div>
+<p-growl [value]="msgs" life="3000"></p-growl>
