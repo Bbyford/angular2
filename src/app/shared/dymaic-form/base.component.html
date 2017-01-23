@@ -6,6 +6,19 @@
             <span class="fa fa-search search-btn" *ngIf="field.searchBtn"></span>
         </label>
     </div>
+    <div *ngIf="field.controlType == 'group'">
+        <label class="flex-box">
+            <fieldset [formGroupName]="field.groupName">
+            <span class="text-exp" >{{field.controlTitle}}</span>
+            <div class="flex-box">
+                <div *ngFor="let group of field['groupData']" [hidden]="group.hidden? group.hidden: false" [ngClass]="group.ElemClass" class="pos-rlt">
+                    <input [type]="group.controlType" [required]="group.required" [formControlName]="group.controlName" [readonly]="readyOnly || group.readyOnly" [ngClass]="{'readyOnly':readyOnly || group.readyOnly}"/>
+                    <span class="fa fa-search search-btn" *ngIf="group.searchBtn"></span>
+                </div>
+            </div>
+            </fieldset>
+        </label>
+    </div>
     <div *ngIf="field.controlType == 'select'">
         <div class="flex-box">
             <span class="text-exp">{{field.controlTitle}}</span>

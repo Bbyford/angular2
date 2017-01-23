@@ -24,9 +24,13 @@
             <p-panel header="编辑公司信息" [toggleable]="true">
                 <form [formGroup]="form" *ngIf="lock">
                     <ng-container *ngFor="let FormData of FormDatas">
-                        <form-base [field]="FormData" [form]="form" [readyOnly]="readyOnly"></form-base>
+                        <!--<div *ngIf="!FormData["groupName"]">-->
+                            <form-base [field]="FormData" [form]="form" [readyOnly]="readyOnly"></form-base>
+                        <!--</div>-->
+                        <!--<ng-container *ngIf="FormData["groupName"]" *ngFor="let groupData of FormData["groupData"]">
+                            <form-base [field]="groupData" [form]="form" [readyOnly]="readyOnly"></form-base>
+                        </ng-container>-->
                     </ng-container>
-                    {{form.value | json}}
                 </form>
             </p-panel>
         </div>

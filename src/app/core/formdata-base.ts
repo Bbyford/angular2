@@ -3,6 +3,8 @@ export class FormDataBase<T>{
   Selectoptions?: T;
   controlType?: string;
   controlName: string;
+  groupName?: string;
+  groupData? : any[];
   required: boolean;
   readyOnly?: boolean;
   order?: number;
@@ -16,6 +18,8 @@ export class FormDataBase<T>{
       Selectoptions?: T,
       controlType?: string,
       controlName?: string,
+      groupName?: string,
+      groupData? : any[],
       required?: boolean,
       readyOnly?: boolean,
       order?: number,
@@ -28,6 +32,8 @@ export class FormDataBase<T>{
     this.Selectoptions = options.Selectoptions;
     this.controlType = options.controlType || '';
     this.controlName = options.controlName || '';
+    this.controlType = options.controlType || '';
+    this.groupData = options.groupData || [];
     this.required = !!options.required;
     this.readyOnly = !!options.readyOnly;
     this.order = options.order === undefined ? 1 : options.order;

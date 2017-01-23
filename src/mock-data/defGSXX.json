@@ -32,24 +32,33 @@
             "ElemClass": "ui-g-3"
         },
         {
-            "controlType": "text",
-            "controlName": "GJID",
-            "controlTitle": "*国家名称",
-            "required": true,
-            "readyOnly": false,
+            "groupName": "GJXX",
             "ElemClass": "ui-g-3",
-            "searchBtn": true
+            "controlTitle": "国家名称",
+            "controlType": "group",
+            "groupData": [
+                {
+                    "controlType": "text",
+                    "controlName": "GJID",
+                    "controlTitle": "*国家编码",
+                    "required": true,
+                    "readyOnly": false,
+                    "ElemClass": "ui-g-4",
+                    "searchBtn": true
+                },
+                {
+                    "controlType": "text",
+                    "controlName": "GJMC",
+                    "controlTitle": "*国家名称",
+                    "required": false,
+                    "readyOnly": false,
+                    "ElemClass": "ui-g-8",
+                    "searchBtn": true,
+                    "hidden": false
+                }
+            ]
         },
-        {
-            "controlType": "text",
-            "controlName": "GJMC",
-            "controlTitle": "*国家名称",
-            "required": false,
-            "readyOnly": false,
-            "ElemClass": "ui-g-3",
-            "searchBtn": true,
-            "hidden": true
-        },
+        
         {
             "controlType": "text",
             "controlName": "SFID",
