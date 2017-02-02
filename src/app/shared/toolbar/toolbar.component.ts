@@ -14,6 +14,7 @@ export class ToolbarComponent implements OnInit {
     @Input() btnList: any[];  //按钮工具栏数组数据
     @Input() btnSwitch : boolean;  //表示grid已经触发点击事件
     @Input() iSave: number;
+    @Input() URL:string;
     @Output() Ondata : EventEmitter<any> = new EventEmitter<any>();  //把查询到的数据传递给父组件
     @Output() Disabled : EventEmitter<any> = new EventEmitter<any>(); //把表单是否能编辑状态和grid传递给父组件， true时为不可编辑，
     @Output() display : EventEmitter<any> = new EventEmitter<any>();
@@ -22,7 +23,6 @@ export class ToolbarComponent implements OnInit {
 
     data: any;
     postData:any={}; //传送到后台的数据，把数据赋给 pdata
-    URL:string;
     iDJZT:number;
     msgs: any[] = [];
     @Input() 
@@ -89,7 +89,7 @@ debugger;
                 this.Disabled.emit({readyOnly:true,expression: false});
             }
             
-            this.URL = null;
+            this.URL = '';
             
         }else if(btn.id === "btnSave"){
             //当点击的按钮为保存时触发
@@ -117,6 +117,7 @@ debugger;
                     //提示信息  组件p-growl
                     this.msgs = [];
                     this.msgs.push({severity:'success', summary:'', detail:this.data["msg"]});
+                    this.URL = '';
                 }else{
                     this.msgs = [];
                     this.msgs.push({severity:'error', summary:'', detail:this.data["msg"]});

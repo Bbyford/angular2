@@ -57,9 +57,9 @@
             "ElemClass": "ui-g-3",
             "Selectoptions": [
                 { "label": "请选择仓库级别", "value": null },
-                { "label": "中心仓", "value": "中心仓" },
-                { "label": "区域中心仓", "value": "区域中心仓" },
-                { "label": "门店仓库", "value": "门店仓库" }
+                { "label": "中心仓", "value": "1" },
+                { "label": "区域中心仓", "value": "2" },
+                { "label": "门店仓库", "value": "3" }
             ]
         },
         {

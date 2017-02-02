@@ -21,10 +21,10 @@ export class NewOtherComponent implements OnInit, OnDestroy, AfterViewInit, OnCh
       private getDataService : DataService,
       private getFormControlService : FormControlService,
       private router : Router
-    ) { 
+    ) {
         debugger;
         let data = this.dataConfigService.getCDNMData("defGSXX");
-        if(data){          
+        if(data){
             this.lock = true;
             this.lock2 = true;
             this.gridDataConf = data["gridDataConf"];
@@ -37,12 +37,13 @@ export class NewOtherComponent implements OnInit, OnDestroy, AfterViewInit, OnCh
             this.selectedGridData = data["selectedGridData"];
             this.selected = data["selected"];
             this.iSave = data["iSave"];
+            this.URL = data["URL"];
             this.btnSwitch = data["btnSwitch"];
         }else{
             this.getData();
-            this.getGridConf(); 
+            this.getGridConf();
         }
-       
+
 
     }
     FormDatas : FormDataBase<any>[] = [];
@@ -76,8 +77,9 @@ export class NewOtherComponent implements OnInit, OnDestroy, AfterViewInit, OnCh
     selected: any;
     gridDataConf: any;
     iSave: number = 0;
+    URL: string = '';
     display: boolean = false;
-    
+
     cancelDataEvent(event):void{
         this.gridSearchData = event;
     }
@@ -90,7 +92,7 @@ export class NewOtherComponent implements OnInit, OnDestroy, AfterViewInit, OnCh
         }
         if(this.btnSwitch){
             this.btnSwitch = false;
-        }       
+        }
     }
 
     setFormValue(Data: any): void{
@@ -99,7 +101,7 @@ export class NewOtherComponent implements OnInit, OnDestroy, AfterViewInit, OnCh
                 this.form.controls[this.FormDatas[i]["controlName"]].setValue(Data[this.FormDatas[i]["controlName"]]);
             }else{
                 this.form.controls[this.FormDatas[i]["controlName"]].setValue('');
-            }                
+            }
         }
     }
 
@@ -107,7 +109,7 @@ export class NewOtherComponent implements OnInit, OnDestroy, AfterViewInit, OnCh
         debugger;
         this.readyOnly = event["readyOnly"];
         this.expression = event["expression"];
-        
+
         if(event["index"] != undefined){
             this.selected = this.gridSearchData[event["index"]];
             this.selectedGridData = this.selected;
@@ -115,8 +117,8 @@ export class NewOtherComponent implements OnInit, OnDestroy, AfterViewInit, OnCh
         if(event["change"]){
           if(this.selectedGridData){
             this.setFormValue(this.selectedGridData);
-            this.readyOnly = true; 
-          }           
+            this.readyOnly = true;
+          }
         }
         if(event.disabled){
             debugger;
@@ -129,21 +131,22 @@ export class NewOtherComponent implements OnInit, OnDestroy, AfterViewInit, OnCh
                 }
             }
         }
-        
+
     }
     DialogDisplay(event:boolean){
         this.mydialog.display = true;
     }
     ngOnInit(): void{
         console.log(this.form);
-            
+
     }
     ngAfterViewInit (){
         console.log(this.form);
     }
     ngOnDestroy() {
         this.iSave = this.toobalComponent.iSave;
-        this.dataConfigService.setCDNMData("defGSXX",{gridDataConf:this.gridDataConf,form: this.form,gridSearchData:this.gridSearchData,formValue: this.form['value'],FormDatas:this.FormDatas,btnList:this.btnList,readyOnly:this.readyOnly,expression:this.expression,selectedGridData:this.selectedGridData,selected:this.selected,iSave:this.iSave,btnSwitch:this.btnSwitch})
+        this.URL = this.toobalComponent.URL;
+        this.dataConfigService.setCDNMData("defGSXX",{gridDataConf:this.gridDataConf,form: this.form,gridSearchData:this.gridSearchData,formValue: this.form['value'],FormDatas:this.FormDatas,btnList:this.btnList,readyOnly:this.readyOnly,expression:this.expression,selectedGridData:this.selectedGridData,selected:this.selected,iSave:this.iSave,btnSwitch:this.btnSwitch,URL:this.URL})
     }
     ngOnChanges(changes: SimpleChanges) {
         debugger;
@@ -152,21 +155,21 @@ export class NewOtherComponent implements OnInit, OnDestroy, AfterViewInit, OnCh
     getData(): void {
       this.getDataService
           .getFormData(this.url)
-          .subscribe(res => {this.FormDatas = res["data"]; this.btnList = res["btnList"];     
+          .subscribe(res => {this.FormDatas = res["data"]; this.btnList = res["btnList"];
           this.form = this.getFormControlService.toFormGroup(this.FormDatas);
-          this.lock = true; 
+          this.lock = true;
         let gsid = this.form.controls["BZ"];
         gsid.valueChanges.subscribe(
         (value: string) => {
         console.log('sku changed to:', value);
             }
-        );  
+        );
     });
     }
     getGridConf(): void {
        this.getDataService
           .getGridPZData(this.gridurl)
-          .subscribe(res => {this.gridDataConf = res;this.lock2 = true;          
-        }); 
+          .subscribe(res => {this.gridDataConf = res;this.lock2 = true;
+        });
     }
 }
