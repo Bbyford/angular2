@@ -39,7 +39,22 @@ export class ToolbarComponent implements OnInit {
      //查询事件
     search():void{
         debugger;
-        this.dataService.RequestPost(this.searchData.data,this.searchData.http).subscribe(res => {
+
+        this.dataService.getDate(this.searchData.http).subscribe(res => {
+            debugger;
+            this.data = res["rows"];
+            this.Ondata.emit(this.data);
+            if(this.URL == "update"){
+                this.Disabled.emit({readyOnly:true,expression: false,change: true,index:this.getIndex()});
+            }else{
+                if(this.form["valid"]){
+                    this.Disabled.emit({readyOnly:true,expression: false,change: true});
+                }             
+            }
+        })
+
+        //服务端设置session过滤 改成本地json请求；
+        /*this.dataService.RequestPost(this.searchData.data,this.searchData.http).subscribe(res => {
             this.data = res.obj.rows;
             this.Ondata.emit(this.data);
             if(this.URL == "update"){
@@ -49,7 +64,7 @@ export class ToolbarComponent implements OnInit {
                     this.Disabled.emit({readyOnly:true,expression: false,change: true});
                 }             
             }
-        });      
+        }); */    
     }
 
     //获得新查询结果和修改前对应的下标，把下标传递给父组件  目前方法为固定，后期应该把参数传递进来或者其他方式传递
@@ -64,7 +79,6 @@ export class ToolbarComponent implements OnInit {
     //按钮点击事件、
     //btn表示点击事件上的数据
     MyClick(btn:any){
-debugger;
         if(btn.id === "btnAdd"){
             this.URL = btn.url;
             for(var key in this.form["controls"]){

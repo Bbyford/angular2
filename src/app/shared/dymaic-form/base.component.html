@@ -2,8 +2,9 @@
     <div *ngIf="field.controlType == 'text'" [hidden]="field.hidden? field.hidden: false">
         <label class="flex-box">
             <span class="text-exp" >{{field.controlTitle}}</span>
-            <input [type]="field.controlType" [required]="field.required" [formControlName]="field.controlName" [readonly]="readyOnly || field.readyOnly" [ngClass]="{'readyOnly':readyOnly || field.readyOnly}"/>
+            <input #text [type]="field.controlType" [required]="field.required" [formControlName]="field.controlName" [readonly]="readyOnly || field.readyOnly" [ngClass]="{'readyOnly':readyOnly || field.readyOnly}" (focus)="onFocus($event)" (blur)="onBlur($event)" [(ngModel)]="value" />
             <span class="fa fa-search search-btn" *ngIf="field.searchBtn"></span>
+            <span class="fa fa-remove (alias) text-delete" *ngIf="targetCurrent && !(readyOnly || field.readyOnly)" (click)="emptyInput($event)"></span>
         </label>
     </div>
     <div *ngIf="field.controlType == 'select'">

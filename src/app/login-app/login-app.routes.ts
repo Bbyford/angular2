@@ -1,3 +1,4 @@
+import { ModuleWithProviders} from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginAppComponent }    from './login-app.component';
 
@@ -10,7 +11,7 @@ export const ROUTER_CONFIG: Routes = [
         ]
 
 
-    },
+    }
 ]
 
-export const ROUTING = RouterModule.forChild(ROUTER_CONFIG);
+export const loginRoutes = RouterModule.forChild(ROUTER_CONFIG);

@@ -1,3 +1,4 @@
+import { ModuleWithProviders} from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent }    from './home';
 import { NewProjectComponent }    from './File/new-project/new-project.component';
@@ -38,4 +39,4 @@ export const ROUTER_CONFIG: Routes = [
     },
 ]
 
-export const ROUTING = RouterModule.forChild(ROUTER_CONFIG);
+export const indexRoutes = RouterModule.forChild(ROUTER_CONFIG);

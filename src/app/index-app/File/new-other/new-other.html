@@ -41,8 +41,10 @@
         </div>
     </div>
 </div>
-<my-dialog [(display)]="display"></my-dialog>
-<!--<p-dialog header="Title" [(visible)]="display">
+<ng-container *ngIf="lock2">
+<my-dialog [(display)]="display" [gridDataConf]="gridDataConf" [gridSearchData]="gridSearchData"></my-dialog>
+</ng-container>
+<!--<p-dialog header="Title" [(visible)]="display" width="300" responsive="false">
     Content
 </p-dialog>-->
 {{display}}

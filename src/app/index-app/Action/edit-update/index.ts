@@ -1,1 +1,1 @@
-export * from './new-project.component';
+export * from './edit-update.component';

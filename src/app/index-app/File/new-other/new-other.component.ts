@@ -60,18 +60,22 @@ export class NewOtherComponent implements OnInit, OnDestroy, AfterViewInit, OnCh
     searchData = {
         data: {
             page: 1,
-            rows: 20,
+            rows: 100,
             sort: 'GSMC',
             order: 'desc',
             F_CZYID: 'A0013',
+            F_CZLX: 'CX',
             pdata: {
                 F_CZQX: "SFID",
                 qrylx: "MAS_GSXX",
                 F_BDJS: "000101",
-                F_BDQXID: "000101"
+                F_BDQXID: "000102",
+                "page": 1,
+                "rows":100,
+                "totle":0
             }
         },
-        http: "base/funcAction/query.action"
+        http: "../../mock-data/searchData.json"
     }
     selectedGridData: any;
     selected: any;
@@ -93,6 +97,9 @@ export class NewOtherComponent implements OnInit, OnDestroy, AfterViewInit, OnCh
         if(this.btnSwitch){
             this.btnSwitch = false;
         }
+    }
+    dialogselectedGirdEvent(event): void{
+        
     }
 
     setFormValue(Data: any): void{
@@ -134,7 +141,7 @@ export class NewOtherComponent implements OnInit, OnDestroy, AfterViewInit, OnCh
 
     }
     DialogDisplay(event:boolean){
-        this.mydialog.display = true;
+        this.mydialog.display = true;;
     }
     ngOnInit(): void{
         console.log(this.form);

@@ -60,15 +60,23 @@ export class DataService {
     }
     //不用改动服务端  post请求
     public RequestPost(data: any,  url: string): Observable<any> {
+        debugger;
         let queryParameters = new URLSearchParams();
         let headerParams = new Headers();
-
 
         let formParams = new URLSearchParams();
         headerParams.set('Content-Type', 'application/x-www-form-urlencoded');
         for(var key in data){
-            formParams.append(key, JSON.stringify(data[key]));
+            if(typeof data[key] != "string"){
+                 formParams.append(key, JSON.stringify(data[key]));
+            }else{
+                 formParams.append(key, data[key]);
+            }
+           
         }
+        //let loginSession = sessionStorage.getItem('user');
+        //formParams.append("SESSION",loginSession);
+        //formParams.append("F_SID",JSON.parse(loginSession)["obj"]["SID"]);
         let requestOptions: RequestOptionsArgs = {
             method: 'POST',
             headers: headerParams,

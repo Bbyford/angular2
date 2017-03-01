@@ -8,6 +8,8 @@ import { Component,Input,Output,EventEmitter} from '@angular/core';
 export class MyDialogComponent{
    idisplay: boolean;
    @Output() visibleChange:EventEmitter<any> = new EventEmitter();
+   @Input() gridDataConf:any;
+   @Input() gridSearchData: any;
    @Input() 
    get display(): boolean {
         return this.idisplay;
@@ -16,9 +18,14 @@ export class MyDialogComponent{
    set display(val:boolean) {
         this.idisplay = val;
    }
+   
+  //  @Output() dialogSelectedData : EventEmitter<any> = new EventEmitter<any>();
   constructor() { }
   change(event: any){
       this.visibleChange.emit(false);
+  }
+  selectedGirdEvent(){
+    
   }
 
 }

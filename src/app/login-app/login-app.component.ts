@@ -15,7 +15,7 @@ export class User {
 })
 export class LoginAppComponent implements OnInit{
   // private headers = new Headers({'Content-Type':'application/json;charset=UTF-8'});
-  private url='http://localhost:8080/YYERP/aut/czyAction/doNotNeedSession_login.action'
+  private url='aut/czyAction/doNotNeedSession_login.action'
   data: any;
   value: any;
   user: User;
@@ -31,7 +31,7 @@ export class LoginAppComponent implements OnInit{
       this.value = {};
       this.value['pdata'] = this.user;
         let path = JSON.stringify(this.user);
-        let url = "http://localhost:8080/YYERP/aut/czyAction/doNotNeedSession_login.action";
+        let url = "aut/czyAction/doNotNeedSession_login.action";
      //  this.path['pdata'] = path;
      // // this.path = JSON.stringify(this.path);
      // var headers = new Headers();

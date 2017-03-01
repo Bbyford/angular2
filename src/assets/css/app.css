@@ -215,7 +215,7 @@ div.flex-box {
     margin-bottom: 8px;
 }
 
-label.flex-box .search-btn {
+label.flex-box .search-btn,label.flex-box .text-delete{
     position: absolute;
     right: 0;
     top: 0;
@@ -223,9 +223,10 @@ label.flex-box .search-btn {
     height: 24px;
     line-height: 24px;
     text-align: center;
+    z-index: 2;
 }
 
-label.flex-box .search-btn:hover {
+label.flex-box .search-btn:hover,label.flex-box .text-delete:hover{
     cursor: pointer;
 }
 .pos-rlt{

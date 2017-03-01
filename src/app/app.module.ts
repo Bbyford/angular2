@@ -5,8 +5,7 @@ import { HttpModule } from '@angular/http';
 // import { FormsModule} from '@angular/forms';
 
 
-import { ROUTING }  from './app.router';
-import { RouterModule }   from '@angular/router';
+import { myappRoutes }  from './app.router';
 
 import { AppComponent } from './app.component';
 import { IndexAppModule }  from './index-app/index-app.module';
@@ -22,10 +21,9 @@ import { CoreModule } from './core';
     ShareModule,
     HttpModule,
     CoreModule,
-    RouterModule,
     IndexAppModule,
     LoginAppModule,
-    ROUTING
+    myappRoutes
   ],
   providers:[],
   bootstrap: [AppComponent]

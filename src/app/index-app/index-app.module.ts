@@ -4,7 +4,7 @@ import { ShareModule }  from '../shared';
 import { AccordionModule,DropdownModule,AutoCompleteModule,PanelModule,CheckboxModule,DataTableModule} from 'primeng/primeng';
 
 // routes
-import { ROUTING }  from './index-app.routes';
+import { indexRoutes }  from './index-app.routes';
 
 // components
 import { HomeComponent }  from './home/home.component';
@@ -53,7 +53,7 @@ import { DataConfigService } from '../core/data-config.service';
     PanelModule,
     CheckboxModule,
     DataTableModule,
-    ROUTING
+    indexRoutes
   ],
   providers: [DataConfigService]
 })
